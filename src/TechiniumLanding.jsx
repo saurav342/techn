@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Bot,
@@ -9,7 +9,6 @@ import {
   Rocket,
   ShieldCheck,
   Building2,
-  MapPin,
   Phone,
   Mail,
   ArrowRight,
@@ -121,7 +120,7 @@ export default function TechiniumLanding() {
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % words.length), 2200);
     return () => clearInterval(id);
-  }, []);
+  }, [words.length]);
 
   // Scroll progress bar
   const [progress, setProgress] = useState(0);
@@ -545,9 +544,9 @@ export default function TechiniumLanding() {
                 We design, build, and scale software with AI at the core. From greenfield apps to AI agents and integrations—delivered with security and reliability.
               </p>
               <div className="mt-4 flex items-center gap-3">
-                <a href="#" className="rounded-full border border-neutral-200 p-2 hover:bg-neutral-50" aria-label="GitHub"><Github className="h-5 w-5" /></a>
-                <a href="#" className="rounded-full border border-neutral-200 p-2 hover:bg-neutral-50" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
-                <a href="#" className="rounded-full border border-neutral-200 p-2 hover:bg-neutral-50" aria-label="Twitter/X"><Twitter className="h-5 w-5" /></a>
+                <a href="https://github.com/techinium" className="rounded-full border border-neutral-200 p-2 hover:bg-neutral-50" aria-label="GitHub"><Github className="h-5 w-5" /></a>
+                <a href="https://www.linkedin.com/company/techinium" className="rounded-full border border-neutral-200 p-2 hover:bg-neutral-50" aria-label="LinkedIn"><Linkedin className="h-5 w-5" /></a>
+                <a href="https://twitter.com/techinium" className="rounded-full border border-neutral-200 p-2 hover:bg-neutral-50" aria-label="Twitter/X"><Twitter className="h-5 w-5" /></a>
               </div>
             </div>
 
@@ -587,8 +586,8 @@ export default function TechiniumLanding() {
           <div className="mt-10 pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="text-neutral-600 text-sm">© {new Date().getFullYear()} Techinium — All rights reserved.</div>
             <div className="flex items-center gap-4 text-sm text-neutral-600">
-              <a href="#" className="hover:text-neutral-900">Privacy</a>
-              <a href="#" className="hover:text-neutral-900">Terms</a>
+              <a href="/privacy" className="hover:text-neutral-900">Privacy</a>
+              <a href="/terms" className="hover:text-neutral-900">Terms</a>
               <a href="mailto:hello@techinium.ai" className="hover:text-neutral-900">Contact</a>
             </div>
           </div>
