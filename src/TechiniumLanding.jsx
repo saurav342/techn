@@ -257,12 +257,12 @@ export default function TechiniumLanding() {
 
       {/* NAVBAR */}
       <header className="sticky top-0 z-40 border-b border-slate-200/70 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2 font-semibold text-slate-900">
-            <LogoAI />
-            <span>Techinium</span>
+            <LogoAI className="h-6 w-6 sm:h-8 sm:w-8" />
+            <span className="text-base sm:text-lg">Techinium</span>
           </a>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
+          <nav className="hidden lg:flex items-center gap-6 text-sm">
             {nav.map((n) => (
               <div key={n.label} className="relative group">
                 {n.dropdown ? (
@@ -284,15 +284,19 @@ export default function TechiniumLanding() {
               </div>
             ))}
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <Magnetic>
-              <Button asChild variant="secondary" className="hidden sm:inline-flex border border-slate-200 bg-white hover:bg-slate-50">
+              <Button asChild variant="secondary" className="hidden md:inline-flex border border-slate-200 bg-white hover:bg-slate-50 text-xs sm:text-sm px-3 sm:px-4">
                 <a href="#contact">Schedule Demo</a>
               </Button>
             </Magnetic>
             <Magnetic>
-              <Button asChild className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 shadow-md">
-                <a href="#contact" className="inline-flex items-center">Get in Touch <ArrowRight className="ml-2 h-4 w-4" /></a>
+              <Button asChild size="sm" className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 shadow-md text-xs sm:text-sm px-3 sm:px-4">
+                <a href="#contact" className="inline-flex items-center">
+                  <span className="hidden sm:inline">Get in Touch</span>
+                  <span className="sm:hidden">Contact</span>
+                  <ArrowRight className="ml-1 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                </a>
               </Button>
             </Magnetic>
           </div>
@@ -305,14 +309,14 @@ export default function TechiniumLanding() {
         <motion.div aria-hidden className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-gradient-to-tr from-slate-400 via-violet-400 to-purple-400 blur-3xl opacity-30" animate={{ y: [0, -12, 0] }} transition={{ duration: 7, repeat: Infinity }} />
         <motion.div aria-hidden className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-slate-300 via-violet-300 to-purple-300 blur-3xl opacity-25" animate={{ y: [0, 10, 0] }} transition={{ duration: 8, repeat: Infinity }} />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs text-violet-700">
                 <Brain className="h-3.5 w-3.5" /> Autonomous AI Solutions
               </div>
-              <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-slate-900">
-                <span className="inline-block">
+              <h1 className="mt-4 sm:mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight text-slate-900">
+                <span className="block">
                   <AnimatePresence mode="wait">
                     <motion.span 
                       key={index} 
@@ -326,66 +330,68 @@ export default function TechiniumLanding() {
                     </motion.span>
                   </AnimatePresence>
                 </span>
-                <br />for Smarter Business
+                <span className="block mt-2">for Smarter Business</span>
               </h1>
-              <p className="mt-6 text-lg text-slate-700 max-w-2xl leading-relaxed">
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Techinium delivers cutting-edge AI solutions that transform how businesses operate. From intelligent automation to autonomous agents, we help startups innovate rapidly and enterprises scale intelligently.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Magnetic>
-                  <Button asChild size="lg" className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 shadow-lg px-8">
-                    <a href="#contact" className="inline-flex items-center">Request a Demo <ArrowRight className="ml-2 h-5 w-5" /></a>
+                  <Button asChild size="lg" className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 shadow-lg px-6 sm:px-8 w-full sm:w-auto">
+                    <a href="#contact" className="inline-flex items-center justify-center">
+                      Request a Demo <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    </a>
                   </Button>
                 </Magnetic>
                 <Magnetic>
-                  <Button asChild variant="secondary" size="lg" className="bg-white border border-slate-200 hover:border-slate-300 px-8">
+                  <Button asChild variant="secondary" size="lg" className="bg-white border border-slate-200 hover:border-slate-300 px-6 sm:px-8 w-full sm:w-auto">
                     <a href="#solutions">Explore Solutions</a>
                   </Button>
                 </Magnetic>
               </div>
 
               {/* Value proposition for different audiences */}
-              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Rocket className="h-6 w-6 text-violet-600" />
-                    <h3 className="font-semibold text-slate-900">For Startups</h3>
+              <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm">
+                  <div className="flex items-center gap-3 mb-2 sm:mb-3">
+                    <Rocket className="h-5 w-5 sm:h-6 sm:w-6 text-violet-600" />
+                    <h3 className="font-semibold text-slate-900 text-sm sm:text-base">For Startups</h3>
                   </div>
-                  <p className="text-sm text-slate-600">Rapid AI implementation to accelerate growth and outpace competition with cutting-edge technology.</p>
+                  <p className="text-xs sm:text-sm text-slate-600">Rapid AI implementation to accelerate growth and outpace competition with cutting-edge technology.</p>
                 </div>
-                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Building2 className="h-6 w-6 text-violet-600" />
-                    <h3 className="font-semibold text-slate-900">For Enterprises</h3>
+                <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm">
+                  <div className="flex items-center gap-3 mb-2 sm:mb-3">
+                    <Building2 className="h-5 w-5 sm:h-6 sm:w-6 text-violet-600" />
+                    <h3 className="font-semibold text-slate-900 text-sm sm:text-base">For Enterprises</h3>
                   </div>
-                  <p className="text-sm text-slate-600">Scalable, reliable AI solutions with enterprise-grade security and seamless integration.</p>
+                  <p className="text-xs sm:text-sm text-slate-600">Scalable, reliable AI solutions with enterprise-grade security and seamless integration.</p>
                 </div>
               </div>
 
               {/* Trust indicators */}
-              <div className="mt-10">
-                <p className="text-xs uppercase tracking-widest text-slate-500 mb-4">Trusted by industry leaders</p>
+              <div className="mt-8 sm:mt-10">
+                <p className="text-xs uppercase tracking-widest text-slate-500 mb-3 sm:mb-4 text-center lg:text-left">Trusted by industry leaders</p>
                 <div className="relative overflow-hidden">
-                  <div className="flex gap-8 animate-[scroll_30s_linear_infinite] [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+                  <div className="flex gap-4 sm:gap-6 lg:gap-8 animate-[scroll_30s_linear_infinite] [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
                     {clients.concat(clients).map((c, i) => (
-                      <div key={c + i} className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm text-slate-600 shadow-sm whitespace-nowrap font-medium">{c}</div>
+                      <div key={c + i} className="rounded-xl border border-slate-200 bg-white px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm text-slate-600 shadow-sm whitespace-nowrap font-medium">{c}</div>
                     ))}
                   </div>
                 </div>
               </div>
 
               {/* Key stats */}
-              <div className="mt-8 grid grid-cols-3 gap-4">
+              <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-3 sm:gap-4">
                 {[
                   { n: "35+", l: "Years Experience", i: Award },
                   { n: "50+", l: "AI Projects", i: Bot },
                   { n: "99.9%", l: "Uptime SLA", i: ShieldCheck },
                 ].map((m) => (
                   <div key={m.l} className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-violet-100 border border-violet-200 mb-2">
-                      <m.i className="h-6 w-6 text-violet-600" />
+                    <div className="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full bg-violet-100 border border-violet-200 mb-2">
+                      <m.i className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-violet-600" />
                     </div>
-                    <div className="text-2xl font-bold text-slate-900">{m.n}</div>
+                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-900">{m.n}</div>
                     <div className="text-xs text-slate-600">{m.l}</div>
                   </div>
                 ))}
@@ -393,22 +399,22 @@ export default function TechiniumLanding() {
             </div>
 
             {/* AI showcase visualization */}
-            <div className="relative">
+            <div className="relative mt-12 lg:mt-0">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="relative p-[2px] rounded-[32px] bg-gradient-to-br from-slate-300 via-violet-300 to-purple-300 shadow-2xl">
-                  <div className="aspect-[4/3] rounded-[30px] bg-gradient-to-br from-white to-slate-50 p-6">
+                <div className="relative p-[2px] rounded-[24px] sm:rounded-[32px] bg-gradient-to-br from-slate-300 via-violet-300 to-purple-300 shadow-2xl">
+                  <div className="aspect-[4/3] rounded-[22px] sm:rounded-[30px] bg-gradient-to-br from-white to-slate-50 p-4 sm:p-6">
                     {/* Neural network visualization */}
-                    <div className="h-full grid grid-cols-3 gap-4 items-center">
-                      <div className="space-y-4">
+                    <div className="h-full grid grid-cols-3 gap-2 sm:gap-4 items-center">
+                      <div className="space-y-2 sm:space-y-4">
                         {[0, 1, 2, 3].map((i) => (
                           <motion.div
                             key={i}
-                            className="w-4 h-4 rounded-full bg-gradient-to-r from-slate-400 to-violet-400"
+                            className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r from-slate-400 to-violet-400"
                             animate={{
                               scale: [1, 1.2, 1],
                               opacity: [0.6, 1, 0.6]
@@ -421,11 +427,11 @@ export default function TechiniumLanding() {
                           />
                         ))}
                       </div>
-                      <div className="space-y-3">
+                      <div className="space-y-1 sm:space-y-3">
                         {[0, 1, 2, 3, 4, 5].map((i) => (
                           <motion.div
                             key={i}
-                            className="w-3 h-3 rounded-full bg-gradient-to-r from-violet-400 to-purple-400"
+                            className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-r from-violet-400 to-purple-400"
                             animate={{
                               scale: [1, 1.3, 1],
                               opacity: [0.5, 1, 0.5]
@@ -438,11 +444,11 @@ export default function TechiniumLanding() {
                           />
                         ))}
                       </div>
-                      <div className="space-y-4">
+                      <div className="space-y-2 sm:space-y-4">
                         {[0, 1, 2].map((i) => (
                           <motion.div
                             key={i}
-                            className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-slate-600"
+                            className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-purple-400 to-slate-600"
                             animate={{
                               scale: [1, 1.4, 1],
                               opacity: [0.7, 1, 0.7]
@@ -491,18 +497,18 @@ export default function TechiniumLanding() {
                 
                 {/* Floating AI icons */}
                 <motion.div
-                  className="absolute -top-4 -right-4 bg-white rounded-full p-3 shadow-lg border border-slate-200"
+                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white rounded-full p-2 sm:p-3 shadow-lg border border-slate-200"
                   animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
                 >
-                  <Brain className="h-6 w-6 text-violet-600" />
+                  <Brain className="h-4 w-4 sm:h-6 sm:w-6 text-violet-600" />
                 </motion.div>
                 <motion.div
-                  className="absolute -bottom-4 -left-4 bg-white rounded-full p-3 shadow-lg border border-slate-200"
+                  className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-white rounded-full p-2 sm:p-3 shadow-lg border border-slate-200"
                   animate={{ y: [0, 8, 0] }}
                   transition={{ duration: 5, repeat: Infinity }}
                 >
-                  <Zap className="h-6 w-6 text-purple-600" />
+                  <Zap className="h-4 w-4 sm:h-6 sm:w-6 text-purple-600" />
                 </motion.div>
               </motion.div>
             </div>
@@ -511,48 +517,48 @@ export default function TechiniumLanding() {
       </section>
 
       {/* CORE AI SOLUTIONS */}
-      <section id="solutions" className="py-24 border-t border-slate-200 bg-white">
+      <section id="solutions" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Core AI Solutions</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Autonomous AI for Modern Business</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Autonomous AI for Modern Business</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
               Transform your operations with our cutting-edge AI solutions. From intelligent automation to advanced analytics, 
               we deliver the technology that powers tomorrow's businesses today.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
             {services.map((service, index) => (
               <Card key={service.title} className="bg-white border border-slate-200 hover:shadow-xl transition-all duration-300 will-change-transform hover:-translate-y-1 group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <CardHeader className="relative z-10 pb-4">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <div className="flex-shrink-0">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200 group-hover:from-violet-200 group-hover:to-purple-200 transition-all duration-300">
+                      <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200 group-hover:from-violet-200 group-hover:to-purple-200 transition-all duration-300">
                         <span className="text-violet-600 group-hover:text-violet-700 transition-colors duration-300">
                           {service.icon}
                         </span>
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <CardTitle className="text-xl text-slate-900 mb-2">{service.title}</CardTitle>
-                      <p className="text-slate-600 leading-relaxed">{service.desc}</p>
+                    <div className="flex-1 min-w-0">
+                      <CardTitle className="text-lg sm:text-xl text-slate-900 mb-2">{service.title}</CardTitle>
+                      <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{service.desc}</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="relative z-10 pt-0">
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {service.features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-3">
+                      <div key={feature} className="flex items-start gap-2 sm:gap-3">
                         <Check className="h-4 w-4 text-violet-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-slate-700">{feature}</span>
+                        <span className="text-xs sm:text-sm text-slate-700">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-6">
+                  <div className="mt-4 sm:mt-6">
                     <Magnetic>
-                      <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50 group-hover:border-violet-300">
+                      <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50 group-hover:border-violet-300 w-full sm:w-auto">
                         Learn More
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -566,40 +572,40 @@ export default function TechiniumLanding() {
       </section>
 
       {/* INDUSTRY SOLUTIONS */}
-      <section id="industries" className="py-24 border-t border-slate-200 bg-slate-50">
+      <section id="industries" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Industry Expertise</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Industry Expertise</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
               Proven success across industries with tailored AI solutions that deliver measurable results.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry) => (
               <Card key={industry.title} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300 will-change-transform hover:-translate-y-1">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200">
+                    <div className="inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200">
                       {industry.icon}
                     </div>
-                    <Badge variant="secondary" className="bg-slate-100 border border-slate-200 text-slate-700">
+                    <Badge variant="secondary" className="bg-slate-100 border border-slate-200 text-slate-700 text-xs">
                       {industry.tag}
                     </Badge>
                   </div>
-                  <CardTitle className="text-lg">{industry.title}</CardTitle>
+                  <CardTitle className="text-base sm:text-lg">{industry.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-4">
                     {industry.points.map((point) => (
-                      <li key={point} className="flex items-start gap-2 text-sm">
-                        <Check className="h-4 w-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                      <li key={point} className="flex items-start gap-2 text-xs sm:text-sm">
+                        <Check className="h-3 w-3 sm:h-4 sm:w-4 text-violet-600 mt-0.5 flex-shrink-0" />
                         <span className="text-slate-700">{point}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="p-3 bg-green-50 border border-green-200 rounded-lg">
-                    <p className="text-sm text-green-800 font-medium">
+                    <p className="text-xs sm:text-sm text-green-800 font-medium leading-relaxed">
                       Success Story: {industry.case}
                     </p>
                   </div>
@@ -611,52 +617,52 @@ export default function TechiniumLanding() {
       </section>
 
       {/* CAREERS */}
-      <section id="careers" className="py-24 border-t border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50">
+      <section id="careers" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-100 text-violet-700 border border-violet-200 mb-4">Join Our Team</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Build the Future of AI with Us</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Build the Future of AI with Us</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
               Join a team of passionate innovators working on cutting-edge AI projects. We're building tomorrow's 
               intelligent systems today, and we want you to be part of that journey.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Why Techinium?</h3>
-              <div className="grid gap-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Why Techinium?</h3>
+              <div className="grid gap-4 sm:gap-6">
                 {[
                   {
-                    icon: <Lightbulb className="h-6 w-6" />,
+                    icon: <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6" />,
                     title: "Innovation-First Culture",
                     desc: "Work on groundbreaking AI projects that push the boundaries of what's possible."
                   },
                   {
-                    icon: <TrendingUp className="h-6 w-6" />,
+                    icon: <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6" />,
                     title: "Rapid Growth Opportunities",
                     desc: "Advance your career in a fast-growing company with mentorship from industry veterans."
                   },
                   {
-                    icon: <Users className="h-6 w-6" />,
+                    icon: <Users className="h-5 w-5 sm:h-6 sm:w-6" />,
                     title: "World-Class Team",
                     desc: "Collaborate with experts from Meta, Amazon, and other leading tech companies."
                   },
                   {
-                    icon: <Globe className="h-6 w-6" />,
+                    icon: <Globe className="h-5 w-5 sm:h-6 sm:w-6" />,
                     title: "Remote-First Flexibility",
                     desc: "Work from anywhere with flexible hours and a strong work-life balance."
                   }
                 ].map((benefit, index) => (
-                  <div key={index} className="flex gap-4">
+                  <div key={index} className="flex gap-3 sm:gap-4">
                     <div className="flex-shrink-0">
-                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white border border-violet-200 text-violet-600">
+                      <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-white border border-violet-200 text-violet-600">
                         {benefit.icon}
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-900 mb-1">{benefit.title}</h4>
-                      <p className="text-slate-600 text-sm">{benefit.desc}</p>
+                      <h4 className="font-semibold text-slate-900 mb-1 text-sm sm:text-base">{benefit.title}</h4>
+                      <p className="text-slate-600 text-xs sm:text-sm">{benefit.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -664,9 +670,9 @@ export default function TechiniumLanding() {
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Perks & Benefits</h3>
-              <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
-                <div className="grid gap-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Perks & Benefits</h3>
+              <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <div className="grid gap-3 sm:gap-4">
                   {[
                     "Competitive salary + equity packages",
                     "Health, dental, and vision insurance",
@@ -677,9 +683,9 @@ export default function TechiniumLanding() {
                     "Stock options in a growing AI company",
                     "Parental leave & family support"
                   ].map((perk, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
-                      <span className="text-slate-700 text-sm">{perk}</span>
+                    <div key={index} className="flex items-center gap-2 sm:gap-3">
+                      <Check className="h-3 w-3 sm:h-4 sm:w-4 text-green-600 flex-shrink-0" />
+                      <span className="text-slate-700 text-xs sm:text-sm">{perk}</span>
                     </div>
                   ))}
                 </div>
@@ -688,28 +694,28 @@ export default function TechiniumLanding() {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">Open Positions</h3>
-            <div className="grid md:grid-cols-3 gap-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 sm:mb-8 text-center">Open Positions</h3>
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
               {careers.map((job, index) => (
                 <Card key={index} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-lg">{job.title}</CardTitle>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-slate-600">
-                          <MapPin className="h-4 w-4" />
-                          {job.location}
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between flex-wrap gap-2">
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-base sm:text-lg pr-2">{job.title}</CardTitle>
+                        <div className="flex items-center gap-2 mt-2 text-xs sm:text-sm text-slate-600">
+                          <MapPin className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                          <span>{job.location}</span>
                         </div>
                       </div>
-                      <Badge variant="secondary" className="bg-violet-100 text-violet-700 border-violet-200">
+                      <Badge variant="secondary" className="bg-violet-100 text-violet-700 border-violet-200 text-xs">
                         {job.type}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-700 text-sm mb-4">{job.description}</p>
+                    <p className="text-slate-700 text-xs sm:text-sm mb-4 leading-relaxed">{job.description}</p>
                     <Magnetic>
-                      <Button className="w-full bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110">
+                      <Button className="w-full bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 text-xs sm:text-sm">
                         Apply Now
                       </Button>
                     </Magnetic>
@@ -739,74 +745,74 @@ export default function TechiniumLanding() {
 
 
       {/* ABOUT US */}
-      <section id="about" className="py-24 border-t border-slate-200 bg-white">
+      <section id="about" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="text-center lg:text-left">
               <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">About Techinium</Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">Built by Visionaries, Powered by Experience</h2>
-              <div className="space-y-6 text-slate-700">
-                <p className="text-lg leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">Built by Visionaries, Powered by Experience</h2>
+              <div className="space-y-4 sm:space-y-6 text-slate-700">
+                <p className="text-base sm:text-lg leading-relaxed">
                   Techinium was founded by a team of seasoned technology leaders with a combined 35+ years of experience 
                   in web design and software architecture. Our leadership includes veterans from Meta, Amazon, and other 
                   top-tier technology companies.
                 </p>
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   We blend decades of design and technical expertise with cutting-edge AI innovation to deliver solutions 
                   that are not just technologically advanced, but also intuitive, scalable, and reliable. Whether you're 
                   a startup looking to disrupt your industry or an enterprise seeking to optimize operations, we have the 
                   experience and vision to bring your AI ambitions to life.
                 </p>
-                <div className="grid grid-cols-2 gap-6 pt-4">
-                  <div className="text-center p-4 rounded-lg border border-slate-200 bg-slate-50">
-                    <div className="text-2xl font-bold text-violet-600 mb-1">35+</div>
-                    <div className="text-sm text-slate-600">Years Combined Experience</div>
+                <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-4">
+                  <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-slate-50">
+                    <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">35+</div>
+                    <div className="text-xs sm:text-sm text-slate-600">Years Combined Experience</div>
                   </div>
-                  <div className="text-center p-4 rounded-lg border border-slate-200 bg-slate-50">
-                    <div className="text-2xl font-bold text-violet-600 mb-1">50+</div>
-                    <div className="text-sm text-slate-600">AI Projects Delivered</div>
+                  <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-slate-50">
+                    <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">50+</div>
+                    <div className="text-xs sm:text-sm text-slate-600">AI Projects Delivered</div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-slate-50 to-violet-50 border border-slate-200 rounded-2xl p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                  <Users className="h-5 w-5 text-violet-600" />
+            <div className="space-y-4 sm:space-y-6 mt-8 lg:mt-0">
+              <div className="bg-gradient-to-br from-slate-50 to-violet-50 border border-slate-200 rounded-2xl p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                  <Users className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                   Our Team
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {team.map((member, index) => (
-                    <div key={index} className="border-l-4 border-violet-200 pl-4">
-                      <div className="font-medium text-slate-900">{member.name}</div>
-                      <div className="text-sm text-slate-600">{member.experience} • {member.background}</div>
-                      <div className="text-sm text-violet-700">{member.expertise}</div>
+                    <div key={index} className="border-l-4 border-violet-200 pl-3 sm:pl-4">
+                      <div className="font-medium text-slate-900 text-sm sm:text-base">{member.name}</div>
+                      <div className="text-xs sm:text-sm text-slate-600">{member.experience} • {member.background}</div>
+                      <div className="text-xs sm:text-sm text-violet-700">{member.expertise}</div>
                     </div>
                   ))}
                 </div>
               </div>
               
-              <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
-                  <Target className="h-5 w-5 text-violet-600" />
+              <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6">
+                <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                  <Target className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                   Our Mission
                 </h3>
-                <p className="text-slate-700 leading-relaxed">
+                <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
                   To democratize AI technology by making sophisticated autonomous solutions accessible to businesses 
                   of all sizes, while maintaining the highest standards of security, reliability, and ethical AI practices.
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center p-4 border border-slate-200 rounded-lg bg-white">
-                  <Award className="h-8 w-8 text-violet-600 mx-auto mb-2" />
-                  <div className="text-sm font-medium text-slate-900">Industry Recognition</div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                <div className="text-center p-3 sm:p-4 border border-slate-200 rounded-lg bg-white">
+                  <Award className="h-6 w-6 sm:h-8 sm:w-8 text-violet-600 mx-auto mb-2" />
+                  <div className="text-xs sm:text-sm font-medium text-slate-900">Industry Recognition</div>
                   <div className="text-xs text-slate-600">AI Innovation Awards</div>
                 </div>
-                <div className="text-center p-4 border border-slate-200 rounded-lg bg-white">
-                  <Globe className="h-8 w-8 text-violet-600 mx-auto mb-2" />
-                  <div className="text-sm font-medium text-slate-900">Global Reach</div>
+                <div className="text-center p-3 sm:p-4 border border-slate-200 rounded-lg bg-white">
+                  <Globe className="h-6 w-6 sm:h-8 sm:w-8 text-violet-600 mx-auto mb-2" />
+                  <div className="text-xs sm:text-sm font-medium text-slate-900">Global Reach</div>
                   <div className="text-xs text-slate-600">Serving 15+ Countries</div>
                 </div>
               </div>
@@ -816,30 +822,30 @@ export default function TechiniumLanding() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="py-24 border-t border-slate-200 bg-white">
+      <section id="contact" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Get Started</Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Ready to Transform Your Business?</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Ready to Transform Your Business?</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
               Let's discuss how Techinium's AI solutions can accelerate your growth and optimize your operations. 
               Schedule a consultation or reach out directly.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid gap-8 sm:gap-12 lg:grid-cols-2">
             {/* Project Inquiry Form */}
             <Card className="bg-white border border-slate-200 shadow-lg">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-xl">
-                  <Rocket className="h-5 w-5 text-violet-600" />
+                <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                  <Rocket className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                   Project Inquiry
                 </CardTitle>
-                <p className="text-slate-600">Tell us about your AI project or business challenge</p>
+                <p className="text-slate-600 text-sm sm:text-base">Tell us about your AI project or business challenge</p>
               </CardHeader>
               <CardContent>
                 <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="text-sm font-medium text-slate-700 mb-1 block">Name *</label>
                       <Input placeholder="Your name" className="bg-white border-slate-300" required />
@@ -859,7 +865,7 @@ export default function TechiniumLanding() {
                   </div>
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-1 block">Project Type *</label>
-                    <select className="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-slate-900">
+                    <select className="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-slate-900 text-sm">
                       <option value="">Select project type</option>
                       <option value="autonomous-agents">Autonomous Agents</option>
                       <option value="nlp-tools">NLP Tools</option>
@@ -873,7 +879,7 @@ export default function TechiniumLanding() {
                     <Textarea 
                       rows={4} 
                       placeholder="Describe your project goals, current challenges, timeline, and budget range..." 
-                      className="bg-white border-slate-300" 
+                      className="bg-white border-slate-300 text-sm" 
                       required 
                     />
                   </div>
@@ -892,21 +898,21 @@ export default function TechiniumLanding() {
             </Card>
             
             {/* Contact Information & Career Inquiries */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <Card className="bg-gradient-to-br from-violet-50 to-purple-50 border border-violet-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-xl">
-                    <Users className="h-5 w-5 text-violet-600" />
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                    <Users className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                     Career Opportunities
                   </CardTitle>
-                  <p className="text-slate-600">Join our team of AI innovators</p>
+                  <p className="text-slate-600 text-sm sm:text-base">Join our team of AI innovators</p>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <p className="text-slate-700">Interested in working with cutting-edge AI technology? We're always looking for talented individuals to join our team.</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Interested in working with cutting-edge AI technology? We're always looking for talented individuals to join our team.</p>
                     <div className="grid gap-3">
                       <Magnetic>
-                        <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-100 justify-start">
+                        <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-100 justify-start w-full">
                           <a href="#careers" className="flex items-center gap-2">
                             <Briefcase className="h-4 w-4" />
                             View Open Positions
@@ -914,7 +920,7 @@ export default function TechiniumLanding() {
                         </Button>
                       </Magnetic>
                       <Magnetic>
-                        <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-100 justify-start">
+                        <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-100 justify-start w-full">
                           <a href="mailto:careers@techinium.ai" className="flex items-center gap-2">
                             <Send className="h-4 w-4" />
                             Send Resume
@@ -928,53 +934,53 @@ export default function TechiniumLanding() {
               
               <Card className="bg-white border border-slate-200">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-xl">
-                    <Building2 className="h-5 w-5 text-violet-600" />
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                    <Building2 className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                     Contact Information
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 border border-violet-200">
-                        <Mail className="h-5 w-5 text-violet-600" />
+                      <div className="inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-violet-100 border border-violet-200">
+                        <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                       </div>
                       <div>
-                        <div className="text-sm text-slate-600">Email</div>
-                        <a href="mailto:hello@techinium.ai" className="font-medium text-slate-900 hover:text-violet-600 transition">
+                        <div className="text-xs sm:text-sm text-slate-600">Email</div>
+                        <a href="mailto:hello@techinium.ai" className="font-medium text-slate-900 hover:text-violet-600 transition text-sm sm:text-base">
                           hello@techinium.ai
                         </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 border border-violet-200">
-                        <Phone className="h-5 w-5 text-violet-600" />
+                      <div className="inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-violet-100 border border-violet-200">
+                        <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                       </div>
                       <div>
-                        <div className="text-sm text-slate-600">Phone</div>
-                        <a href="tel:+918123456789" className="font-medium text-slate-900 hover:text-violet-600 transition">
+                        <div className="text-xs sm:text-sm text-slate-600">Phone</div>
+                        <a href="tel:+918123456789" className="font-medium text-slate-900 hover:text-violet-600 transition text-sm sm:text-base">
                           +91 8123 456 789
                         </a>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-violet-100 border border-violet-200">
-                        <MapPin className="h-5 w-5 text-violet-600" />
+                      <div className="inline-flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-violet-100 border border-violet-200">
+                        <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                       </div>
                       <div>
-                        <div className="text-sm text-slate-600">Headquarters</div>
-                        <div className="font-medium text-slate-900">Bengaluru, India</div>
+                        <div className="text-xs sm:text-sm text-slate-600">Headquarters</div>
+                        <div className="font-medium text-slate-900 text-sm sm:text-base">Bengaluru, India</div>
                       </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
-              <div className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 rounded-2xl p-6 text-white">
-                <h3 className="text-lg font-semibold mb-2">Prefer to schedule a call?</h3>
-                <p className="text-sm opacity-90 mb-4">Book a 30-minute discovery call with our AI experts to discuss your project requirements.</p>
+              <div className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 rounded-2xl p-4 sm:p-6 text-white">
+                <h3 className="text-base sm:text-lg font-semibold mb-2">Prefer to schedule a call?</h3>
+                <p className="text-xs sm:text-sm opacity-90 mb-4">Book a 30-minute discovery call with our AI experts to discuss your project requirements.</p>
                 <Magnetic>
-                  <Button variant="secondary" className="bg-white text-slate-900 hover:bg-slate-100 w-full">
+                  <Button variant="secondary" className="bg-white text-slate-900 hover:bg-slate-100 w-full text-sm">
                     <a href="https://calendly.com/techinium" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                       <Clock className="h-4 w-4" />
                       Schedule Discovery Call
@@ -1080,45 +1086,45 @@ export default function TechiniumLanding() {
 
       {/* FOOTER */}
       <footer className="border-t border-slate-200 bg-slate-900 text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-5 gap-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="grid gap-8 sm:gap-10 md:grid-cols-3 lg:grid-cols-5">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 font-bold mb-4">
-                <LogoAI className="h-8 w-8" /> 
-                <span className="text-xl">Techinium</span>
+                <LogoAI className="h-6 w-6 sm:h-8 sm:w-8" /> 
+                <span className="text-lg sm:text-xl">Techinium</span>
               </div>
               <p className="text-slate-400 text-sm max-w-sm mb-6 leading-relaxed">
                 Transforming businesses with autonomous AI solutions. From intelligent automation to advanced analytics, 
                 we deliver the technology that powers tomorrow's enterprises.
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 sm:gap-4">
                 <a 
                   href="https://github.com/techinium" 
                   className="rounded-full border border-slate-700 p-2 hover:bg-slate-800 hover:border-slate-600 transition" 
                   aria-label="GitHub"
                 >
-                  <Github className="h-5 w-5" />
+                  <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
                   href="https://www.linkedin.com/company/techinium" 
                   className="rounded-full border border-slate-700 p-2 hover:bg-slate-800 hover:border-slate-600 transition" 
                   aria-label="LinkedIn"
                 >
-                  <Linkedin className="h-5 w-5" />
+                  <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
                 <a 
                   href="https://twitter.com/techinium" 
                   className="rounded-full border border-slate-700 p-2 hover:bg-slate-800 hover:border-slate-600 transition" 
                   aria-label="Twitter/X"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
                 </a>
               </div>
             </div>
 
             <div>
-              <div className="font-semibold mb-4 text-white">Solutions</div>
-              <ul className="text-sm text-slate-400 space-y-3">
+              <div className="font-semibold mb-3 sm:mb-4 text-white text-sm sm:text-base">Solutions</div>
+              <ul className="text-sm text-slate-400 space-y-2 sm:space-y-3">
                 <li><a href="#solutions" className="hover:text-white transition">Autonomous Agents</a></li>
                 <li><a href="#solutions" className="hover:text-white transition">NLP Tools</a></li>
                 <li><a href="#solutions" className="hover:text-white transition">MLOps Platforms</a></li>
@@ -1127,8 +1133,8 @@ export default function TechiniumLanding() {
             </div>
 
             <div>
-              <div className="font-semibold mb-4 text-white">Company</div>
-              <ul className="text-sm text-slate-400 space-y-3">
+              <div className="font-semibold mb-3 sm:mb-4 text-white text-sm sm:text-base">Company</div>
+              <ul className="text-sm text-slate-400 space-y-2 sm:space-y-3">
                 <li><a href="#about" className="hover:text-white transition">About Us</a></li>
                 <li><a href="#careers" className="hover:text-white transition">Careers</a></li>
                 <li><a href="#industries" className="hover:text-white transition">Industries</a></li>
@@ -1137,11 +1143,11 @@ export default function TechiniumLanding() {
             </div>
 
             <div>
-              <div className="font-semibold mb-4 text-white">Resources</div>
-              <div className="space-y-4">
+              <div className="font-semibold mb-3 sm:mb-4 text-white text-sm sm:text-base">Contact</div>
+              <div className="space-y-3 sm:space-y-4">
                 <div className="text-sm text-slate-400">
                   <div className="font-medium text-white mb-1">Email</div>
-                  <a href="mailto:hello@techinium.ai" className="hover:text-white transition">
+                  <a href="mailto:hello@techinium.ai" className="hover:text-white transition break-all">
                     hello@techinium.ai
                   </a>
                 </div>
@@ -1159,11 +1165,11 @@ export default function TechiniumLanding() {
             </div>
           </div>
 
-          <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="text-slate-400 text-sm">
               © {new Date().getFullYear()} Techinium. All rights reserved.
             </div>
-            <div className="flex items-center gap-6 text-sm text-slate-400">
+            <div className="flex items-center gap-4 sm:gap-6 text-sm text-slate-400">
               <a href="/privacy" className="hover:text-white transition">Privacy Policy</a>
               <a href="/terms" className="hover:text-white transition">Terms of Service</a>
               <a href="mailto:hello@techinium.ai" className="hover:text-white transition">Support</a>
