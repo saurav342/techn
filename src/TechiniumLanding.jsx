@@ -457,7 +457,7 @@ export default function TechiniumLanding() {
               </div>
             </div>
 
-            {/* AI showcase visualization */}
+            {/* Innovative code-flow visualization */}
             <div className="relative mt-12 lg:mt-0">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }} 
@@ -465,109 +465,196 @@ export default function TechiniumLanding() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                <div className="relative p-[2px] rounded-[24px] sm:rounded-[32px] bg-gradient-to-br from-slate-300 via-violet-300 to-purple-300 shadow-2xl">
-                  <div className="aspect-[4/3] rounded-[22px] sm:rounded-[30px] bg-gradient-to-br from-white to-slate-50 p-4 sm:p-6">
-                    {/* Neural network visualization */}
-                    <div className="h-full grid grid-cols-3 gap-2 sm:gap-4 items-center">
-                      <div className="space-y-2 sm:space-y-4">
-                        {[0, 1, 2, 3].map((i) => (
-                          <motion.div
-                            key={i}
-                            className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-r from-slate-400 to-violet-400"
-                            animate={{
-                              scale: [1, 1.2, 1],
-                              opacity: [0.6, 1, 0.6]
-                            }}
-                            transition={{
-                              duration: 2,
-                              repeat: Infinity,
-                              delay: i * 0.2
-                            }}
-                          />
-                        ))}
-                      </div>
-                      <div className="space-y-1 sm:space-y-3">
-                        {[0, 1, 2, 3, 4, 5].map((i) => (
-                          <motion.div
-                            key={i}
-                            className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-r from-violet-400 to-purple-400"
-                            animate={{
-                              scale: [1, 1.3, 1],
-                              opacity: [0.5, 1, 0.5]
-                            }}
-                            transition={{
-                              duration: 2.5,
-                              repeat: Infinity,
-                              delay: i * 0.15
-                            }}
-                          />
-                        ))}
-                      </div>
-                      <div className="space-y-2 sm:space-y-4">
-                        {[0, 1, 2].map((i) => (
-                          <motion.div
-                            key={i}
-                            className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-purple-400 to-slate-600"
-                            animate={{
-                              scale: [1, 1.4, 1],
-                              opacity: [0.7, 1, 0.7]
-                            }}
-                            transition={{
-                              duration: 3,
-                              repeat: Infinity,
-                              delay: i * 0.3
-                            }}
-                          />
-                        ))}
-                      </div>
+                {/* Main container with glass morphism */}
+                <div className="relative aspect-[4/3] rounded-[32px] bg-gradient-to-br from-white/70 to-slate-50/70 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden">
+                  {/* Animated code blocks flowing */}
+                  <div className="absolute inset-0 p-8">
+                    {/* Terminal window simulation */}
+                    <div className="absolute top-6 left-6 right-6 h-8 bg-slate-900 rounded-t-lg flex items-center px-4 gap-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                      <span className="text-xs text-gray-400 ml-4 font-mono">~ building magic</span>
                     </div>
                     
-                    {/* Connecting lines */}
-                    <svg className="absolute inset-0 w-full h-full" style={{ zIndex: -1 }}>
-                      <defs>
-                        <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#64748b" stopOpacity="0.3" />
-                          <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.6" />
-                          <stop offset="100%" stopColor="#6366f1" stopOpacity="0.3" />
-                        </linearGradient>
-                      </defs>
-                      {/* Example connecting lines */}
-                      <motion.path
-                        d="M80 50 Q200 100 300 80"
-                        stroke="url(#line-gradient)"
-                        strokeWidth="2"
-                        fill="none"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    {/* Code editor simulation */}
+                    <div className="absolute top-14 left-6 right-6 bottom-12 bg-slate-900 rounded-b-lg p-4 font-mono text-xs overflow-hidden">
+                      {/* Animated code lines */}
+                      <motion.div
+                        className="space-y-1"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1 }}
+                      >
+                        <motion.div 
+                          className="text-purple-400"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          transition={{ delay: 1.2, duration: 0.8 }}
+                        >
+                          <span className="text-gray-500">1</span> <span className="text-blue-400">const</span> <span className="text-white">magic</span> <span className="text-purple-400">=</span> <span className="text-green-400">await</span> <span className="text-yellow-400">buildApp</span><span className="text-white">()</span>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="text-purple-400"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          transition={{ delay: 1.6, duration: 0.8 }}
+                        >
+                          <span className="text-gray-500">2</span> <span className="text-blue-400">export</span> <span className="text-white">function</span> <span className="text-yellow-400">Innovation</span><span className="text-white">()</span>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="text-purple-400 ml-4"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          transition={{ delay: 2.0, duration: 0.8 }}
+                        >
+                          <span className="text-gray-500">3</span> <span className="text-blue-400">return</span> <span className="text-white">&lt;</span><span className="text-red-400">Future</span> <span className="text-purple-400">speed</span><span className="text-white">=</span><span className="text-green-400">"lightning"</span> <span className="text-white">/&gt;</span>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="text-white ml-4"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          transition={{ delay: 2.4, duration: 0.8 }}
+                        >
+                          <span className="text-gray-500">4</span> <span className="text-green-400">// AI accelerated build complete</span>
+                        </motion.div>
+                      </motion.div>
+                      
+                      {/* Blinking cursor */}
+                      <motion.div
+                        className="inline-block w-2 h-4 bg-green-400 ml-1"
+                        animate={{ opacity: [1, 0, 1] }}
+                        transition={{ duration: 1, repeat: Infinity }}
                       />
-                      <motion.path
-                        d="M80 120 Q200 160 300 140"
-                        stroke="url(#line-gradient)"
-                        strokeWidth="2"
-                        fill="none"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                    </div>
+                    
+                    {/* Floating data particles */}
+                    {[...Array(12)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-violet-400 rounded-full"
+                        style={{
+                          left: `${20 + (i * 6)}%`,
+                          top: `${30 + (i % 3) * 15}%`
+                        }}
+                        animate={{
+                          y: [0, -20, 0],
+                          opacity: [0.3, 1, 0.3],
+                          scale: [0.5, 1.2, 0.5]
+                        }}
+                        transition={{
+                          duration: 3 + (i * 0.2),
+                          repeat: Infinity,
+                          delay: i * 0.3
+                        }}
                       />
-                    </svg>
+                    ))}
+                    
+                    {/* AI Processing indicator */}
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                        <div className="flex items-center gap-3">
+                          <motion.div
+                            className="w-2 h-2 bg-green-400 rounded-full"
+                            animate={{ scale: [1, 1.5, 1] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                          />
+                          <span className="text-xs text-slate-600 font-medium">AI accelerating your build...</span>
+                          
+                          {/* Progress dots */}
+                          <div className="flex gap-1 ml-auto">
+                            {[0, 1, 2].map((i) => (
+                              <motion.div
+                                key={i}
+                                className="w-1 h-1 bg-violet-400 rounded-full"
+                                animate={{ opacity: [0.3, 1, 0.3] }}
+                                transition={{
+                                  duration: 1,
+                                  repeat: Infinity,
+                                  delay: i * 0.3
+                                }}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        
+                        {/* Progress bar */}
+                        <div className="mt-2 h-1 bg-slate-200 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-gradient-to-r from-violet-400 to-purple-500"
+                            initial={{ width: "0%" }}
+                            animate={{ width: "100%" }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
+                  
+                  {/* Ambient lighting effects */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/5 via-transparent to-purple-500/5"></div>
+                  
+                  {/* Subtle grid pattern */}
+                  <div 
+                    className="absolute inset-0 opacity-[0.03]"
+                    style={{
+                      backgroundImage: `
+                        linear-gradient(90deg, #000 1px, transparent 1px),
+                        linear-gradient(180deg, #000 1px, transparent 1px)
+                      `,
+                      backgroundSize: '20px 20px'
+                    }}
+                  />
                 </div>
                 
-                {/* Floating AI icons */}
+                {/* Floating tech badges */}
                 <motion.div
-                  className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white rounded-full p-2 sm:p-3 shadow-lg border border-slate-200"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
+                  className="absolute -top-4 -right-4 bg-white rounded-full p-3 shadow-xl border border-slate-200"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    rotate: [0, 5, 0]
+                  }}
+                  transition={{ duration: 6, repeat: Infinity }}
                 >
-                  <Brain className="h-4 w-4 sm:h-6 sm:w-6 text-violet-600" />
+                  <div className="w-6 h-6 bg-gradient-to-br from-violet-500 to-purple-600 rounded-md flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">AI</span>
+                  </div>
                 </motion.div>
+                
                 <motion.div
-                  className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-white rounded-full p-2 sm:p-3 shadow-lg border border-slate-200"
-                  animate={{ y: [0, 8, 0] }}
-                  transition={{ duration: 5, repeat: Infinity }}
+                  className="absolute -bottom-4 -left-4 bg-white rounded-full p-3 shadow-xl border border-slate-200"
+                  animate={{ 
+                    y: [0, 10, 0],
+                    rotate: [0, -5, 0]
+                  }}
+                  transition={{ duration: 7, repeat: Infinity }}
                 >
-                  <Zap className="h-4 w-4 sm:h-6 sm:w-6 text-purple-600" />
+                  <Zap className="h-6 w-6 text-yellow-500" />
+                </motion.div>
+                
+                {/* Deploy success notification */}
+                <motion.div
+                  className="absolute top-8 -right-8"
+                  initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                  animate={{ 
+                    opacity: [0, 1, 1, 0],
+                    x: [50, 0, 0, -50],
+                    scale: [0.8, 1, 1, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    delay: 3,
+                    times: [0, 0.2, 0.8, 1]
+                  }}
+                >
+                  <div className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 shadow-lg">
+                    <Check className="w-3 h-3" />
+                    Deployed
+                  </div>
                 </motion.div>
               </motion.div>
             </div>
