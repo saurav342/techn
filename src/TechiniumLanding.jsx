@@ -519,7 +519,7 @@ export default function TechiniumLanding() {
                           animate={{ width: "auto", opacity: 1 }}
                           transition={{ delay: 2.4, duration: 0.8 }}
                         >
-                          <span className="text-gray-500">4</span> <span className="text-green-400">// AI accelerated build complete</span>
+                          <span className="text-gray-500">4</span> <span className="text-green-400">{'// AI accelerated build complete'}</span>
                         </motion.div>
                       </motion.div>
                       
