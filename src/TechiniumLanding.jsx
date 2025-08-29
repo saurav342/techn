@@ -251,27 +251,6 @@ const industries = [
   }
 ];
 
-const team = [
-  {
-    name: "Senior Leadership",
-    experience: "35+ years combined",
-    background: "Meta, Amazon, Google",
-    expertise: "Product Strategy & Technical Architecture"
-  },
-  {
-    name: "Full-Stack Developers",
-    experience: "10+ years average",
-    background: "Top-tier tech companies",
-    expertise: "Modern Web & Mobile Development"
-  },
-  {
-    name: "UI/UX Designers",
-    experience: "8+ years average",
-    background: "Startup to enterprise",
-    expertise: "User Experience & Interface Design"
-  }
-];
-
 const careers = [
   {
     title: "Senior Full Stack Developer",
