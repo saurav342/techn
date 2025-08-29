@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Bot,
   Rocket,
   ShieldCheck,
   Building2,
@@ -14,7 +13,6 @@ import {
   Twitter,
   Send,
   Brain,
-  MessageSquare,
   Database,
   Users,
   Award,
@@ -29,6 +27,12 @@ import {
   Lightbulb,
   MapPin,
   Clock,
+  Code2,
+  Package,
+  Layers,
+  Network,
+  Cloud,
+  Settings2,
 } from "lucide-react";
 import { Button } from "./ui-button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui-card";
@@ -116,52 +120,107 @@ const clients = ["Meta", "Amazon", "Google", "Microsoft", "Shopify", "Stripe", "
 
 const services = [
   { 
-    icon: <Bot className="h-6 w-6" />, 
-    title: "Autonomous Agents", 
-    desc: "AI agents that work 24/7 to automate complex workflows, make intelligent decisions, and handle customer interactions with human-level understanding.",
-    features: ["Customer service automation", "Sales pipeline management", "Back-office workflow automation", "Decision-making intelligence"]
+    icon: <Code2 className="h-6 w-6" />, 
+    title: "Web Application Development", 
+    desc: "Custom web applications, responsive websites, corporate portals, and PWAs built with modern frameworks and accelerated by AI tools for faster delivery.",
+    features: ["Custom web applications", "Responsive websites & corporate portals", "Progressive Web Apps (PWAs)", "Enterprise application development"],
+    technologies: "HTML5, CSS3, JavaScript, React, Angular, Vue.js, Node.js, PHP, Python, .NET"
   },
   { 
-    icon: <MessageSquare className="h-6 w-6" />, 
-    title: "NLP Tools", 
-    desc: "Advanced natural language processing solutions for understanding, generating, and analyzing human language at scale with enterprise-grade accuracy.",
-    features: ["Intelligent chatbots", "Sentiment analysis", "Document processing", "Multi-language translation"]
+    icon: <Phone className="h-6 w-6" />, 
+    title: "Mobile App Development", 
+    desc: "Native iOS/Android apps and cross-platform solutions using Flutter, React Native, delivering high-performance mobile experiences.",
+    features: ["Native iOS & Android apps", "Cross-platform solutions (Flutter, React Native)", "Hybrid apps with Xamarin, Ionic", "Mobile-first design approach"],
+    technologies: "Swift, Kotlin, Java, Flutter, React Native, Xamarin, Ionic"
   },
   { 
     icon: <Database className="h-6 w-6" />, 
-    title: "MLOps Platforms", 
-    desc: "End-to-end machine learning operations platform ensuring your AI models are always optimized, monitored, and performing at peak efficiency.",
-    features: ["Model deployment & scaling", "Performance monitoring", "Data pipeline management", "A/B testing frameworks"]
+    title: "Full Stack Development", 
+    desc: "Frontend, backend, database management, API development, and cloud deployment with microservices architecture and AI-accelerated workflows.",
+    features: ["MEAN/MERN stack development", "Backend & database management", "Microservices architecture", "Cloud deployment & scaling"],
+    technologies: "MEAN/MERN stack, Django, Laravel, Spring Boot, microservices"
   },
   { 
-    icon: <Lightbulb className="h-6 w-6" />, 
-    title: "AI Consulting", 
-    desc: "Strategic guidance from our experts to identify AI opportunities, develop implementation roadmaps, and transform your business with intelligent solutions.",
-    features: ["AI strategy development", "Technology assessment", "Implementation planning", "Team training & workshops"]
+    icon: <Network className="h-6 w-6" />, 
+    title: "API Development & Integration", 
+    desc: "Custom API development (REST, GraphQL), third-party integrations, payment gateways, and secure data communication systems.",
+    features: ["Custom REST & GraphQL APIs", "Third-party integrations", "Payment gateway integration", "Secure data communication"],
+    technologies: "REST APIs, GraphQL, JSON, XML, OAuth, JWT, Postman, Swagger"
   },
+];
+
+const additionalServices = [
+  {
+    icon: <Package className="h-5 w-5" />,
+    title: "E-commerce Development",
+    desc: "Online stores, payment integration, inventory management, multi-platform solutions, shopping cart development.",
+    technologies: "Shopify, Magento, WooCommerce, Adobe Commerce, custom platforms"
+  },
+  {
+    icon: <Layers className="h-5 w-5" />,
+    title: "UI/UX Design Services",
+    desc: "User research, wireframing, prototyping, visual design, usability testing, responsive design.",
+    technologies: "Figma, Sketch, Adobe XD, InVision, Principle, Framer"
+  },
+  {
+    icon: <Lightbulb className="h-5 w-5" />,
+    title: "Digital Transformation",
+    desc: "Legacy system modernization, cloud migration, automation, AI/ML integration, strategic consulting.",
+    technologies: "Cloud platforms, containers, microservices, AI/ML frameworks, automation tools"
+  },
+  {
+    icon: <Briefcase className="h-5 w-5" />,
+    title: "Web Development Consulting",
+    desc: "Architecture guidance, technology selection, performance optimization, security audits, roadmap development.",
+    technologies: "Architecture patterns, performance tools, security frameworks, compliance standards"
+  },
+  {
+    icon: <Settings2 className="h-5 w-5" />,
+    title: "Website Maintenance & Support",
+    desc: "Software updates, security patches, content management, backup services, performance monitoring.",
+    technologies: "CMS platforms, monitoring tools, backup solutions, security tools"
+  },
+  {
+    icon: <ShieldCheck className="h-5 w-5" />,
+    title: "Quality Assurance & Testing",
+    desc: "Functionality testing, usability testing, performance testing, security testing, automated testing.",
+    technologies: "Selenium, Jest, Cypress, JUnit, load testing tools, security scanners"
+  },
+  {
+    icon: <TrendingUp className="h-5 w-5" />,
+    title: "Digital Marketing Integration",
+    desc: "SEO optimization, social media marketing, PPC advertising, content strategy, analytics implementation.",
+    technologies: "Google Analytics, SEO tools, social media platforms, PPC platforms"
+  },
+  {
+    icon: <Cloud className="h-5 w-5" />,
+    title: "Cloud Services & DevOps",
+    desc: "Cloud migration (AWS, Azure, GCP), CI/CD pipelines, automated deployments, monitoring.",
+    technologies: "Docker, Kubernetes, Jenkins, GitHub Actions, monitoring"
+  }
 ];
 
 const industries = [
   { 
-    tag: "Healthcare", 
-    title: "Healthcare AI", 
-    icon: <Heart className="h-5 w-5" />,
-    points: ["Medical image analysis", "Patient data insights", "Drug discovery acceleration"],
-    case: "Reduced diagnosis time by 40% with AI-powered radiology assistant"
+    tag: "E-commerce", 
+    title: "E-commerce & Retail", 
+    icon: <Target className="h-5 w-5" />,
+    points: ["Custom online stores", "Payment gateway integration", "Inventory management systems"],
+    case: "Built a multi-vendor marketplace that increased client sales by 200% within 6 months"
   },
   { 
     tag: "Finance", 
-    title: "Financial Services", 
+    title: "Financial Technology", 
     icon: <TrendingUp className="h-5 w-5" />,
-    points: ["Fraud detection systems", "Risk assessment models", "Trading algorithms"],
-    case: "Prevented $2M+ in fraudulent transactions with real-time AI monitoring"
+    points: ["Secure trading platforms", "Digital banking solutions", "Payment processing systems"],
+    case: "Developed a fintech mobile app with 50,000+ active users and 99.9% uptime"
   },
   { 
-    tag: "Retail", 
-    title: "E-commerce & Retail", 
-    icon: <Target className="h-5 w-5" />,
-    points: ["Recommendation engines", "Inventory optimization", "Customer insights"],
-    case: "Increased conversion rates by 35% with AI-powered personalization"
+    tag: "Healthcare", 
+    title: "Healthcare & Medical", 
+    icon: <Heart className="h-5 w-5" />,
+    points: ["Patient management systems", "Telemedicine platforms", "Healthcare data analytics"],
+    case: "Created a telehealth platform serving 10,000+ patients during the pandemic"
   },
 ];
 
@@ -170,46 +229,46 @@ const team = [
     name: "Senior Leadership",
     experience: "35+ years combined",
     background: "Meta, Amazon, Google",
-    expertise: "Product Strategy & AI Architecture"
-  },
-  {
-    name: "AI Engineers",
-    experience: "10+ years average",
-    background: "Top-tier tech companies",
-    expertise: "Machine Learning & Deep Learning"
+    expertise: "Product Strategy & Technical Architecture"
   },
   {
     name: "Full-Stack Developers",
+    experience: "10+ years average",
+    background: "Top-tier tech companies",
+    expertise: "Modern Web & Mobile Development"
+  },
+  {
+    name: "UI/UX Designers",
     experience: "8+ years average",
     background: "Startup to enterprise",
-    expertise: "Modern Web & Mobile Development"
+    expertise: "User Experience & Interface Design"
   }
 ];
 
 const careers = [
   {
-    title: "Senior AI Engineer",
+    title: "Senior Full Stack Developer",
     location: "Bengaluru / Remote",
     type: "Full-time",
-    description: "Lead development of autonomous AI agents and NLP systems for enterprise clients."
+    description: "Lead development of modern web applications using React, Node.js, and cloud technologies for enterprise clients."
   },
   {
-    title: "MLOps Engineer",
+    title: "Mobile App Developer",
     location: "Bengaluru / Remote", 
     type: "Full-time",
-    description: "Build and maintain scalable ML infrastructure and deployment pipelines."
+    description: "Build native and cross-platform mobile applications using React Native, Flutter, and native technologies."
   },
   {
-    title: "Product Designer",
+    title: "UI/UX Designer",
     location: "Bengaluru / Remote",
     type: "Full-time", 
-    description: "Design intuitive AI-powered interfaces and user experiences."
+    description: "Design intuitive and beautiful user interfaces for web and mobile applications with focus on user experience."
   }
 ];
 
 export default function TechiniumLanding() {
   // Rotating hero phrases
-  const words = ["Autonomous AI Solutions", "Intelligent Automation", "Smart Business Systems", "AI-Powered Innovation"];
+  const words = ["Web Applications", "Mobile Solutions", "Digital Experiences", "AI-Accelerated Development"];
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % words.length), 2500);
@@ -313,7 +372,7 @@ export default function TechiniumLanding() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs text-violet-700">
-                <Brain className="h-3.5 w-3.5" /> Autonomous AI Solutions
+                <Brain className="h-3.5 w-3.5" /> AI-Accelerated Development
               </div>
               <h1 className="mt-4 sm:mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight text-slate-900">
                 <span className="block">
@@ -330,22 +389,22 @@ export default function TechiniumLanding() {
                     </motion.span>
                   </AnimatePresence>
                 </span>
-                <span className="block mt-2">for Smarter Business</span>
+                <span className="block mt-2">Built Fast & Smart</span>
               </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Techinium delivers cutting-edge AI solutions that transform how businesses operate. From intelligent automation to autonomous agents, we help startups innovate rapidly and enterprises scale intelligently.
+                Lightning-fast web and mobile development powered by AI. Enterprise-grade quality, startup speed.
               </p>
               <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Magnetic>
                   <Button asChild size="lg" className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 shadow-lg px-6 sm:px-8 w-full sm:w-auto">
                     <a href="#contact" className="inline-flex items-center justify-center">
-                      Request a Demo <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      Start Your Project <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                     </a>
                   </Button>
                 </Magnetic>
                 <Magnetic>
                   <Button asChild variant="secondary" size="lg" className="bg-white border border-slate-200 hover:border-slate-300 px-6 sm:px-8 w-full sm:w-auto">
-                    <a href="#solutions">Explore Solutions</a>
+                    <a href="#solutions">View Our Services</a>
                   </Button>
                 </Magnetic>
               </div>
@@ -357,14 +416,14 @@ export default function TechiniumLanding() {
                     <Rocket className="h-5 w-5 sm:h-6 sm:w-6 text-violet-600" />
                     <h3 className="font-semibold text-slate-900 text-sm sm:text-base">For Startups</h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600">Rapid AI implementation to accelerate growth and outpace competition with cutting-edge technology.</p>
+                  <p className="text-xs sm:text-sm text-slate-600">MVP to market in weeks, not months.</p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm">
                   <div className="flex items-center gap-3 mb-2 sm:mb-3">
                     <Building2 className="h-5 w-5 sm:h-6 sm:w-6 text-violet-600" />
                     <h3 className="font-semibold text-slate-900 text-sm sm:text-base">For Enterprises</h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600">Scalable, reliable AI solutions with enterprise-grade security and seamless integration.</p>
+                  <p className="text-xs sm:text-sm text-slate-600">Scalable solutions, proven security, guaranteed results.</p>
                 </div>
               </div>
 
@@ -383,8 +442,8 @@ export default function TechiniumLanding() {
               {/* Key stats */}
               <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-3 sm:gap-4">
                 {[
-                  { n: "35+", l: "Years Experience", i: Award },
-                  { n: "50+", l: "AI Projects", i: Bot },
+                  { n: "100+", l: "Projects Delivered", i: Award },
+                  { n: "50+", l: "Happy Clients", i: Users },
                   { n: "99.9%", l: "Uptime SLA", i: ShieldCheck },
                 ].map((m) => (
                   <div key={m.l} className="text-center">
@@ -516,15 +575,15 @@ export default function TechiniumLanding() {
         </div>
       </section>
 
-      {/* CORE AI SOLUTIONS */}
+      {/* CORE DEVELOPMENT SERVICES */}
       <section id="solutions" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Core AI Solutions</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Autonomous AI for Modern Business</h2>
+            <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Core Development Services</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Fast-Paced Development with AI Acceleration</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Transform your operations with our cutting-edge AI solutions. From intelligent automation to advanced analytics, 
-              we deliver the technology that powers tomorrow's businesses today.
+              Comprehensive web and mobile development services delivered rapidly using cutting-edge AI tools and modern frameworks. 
+              From custom applications to enterprise solutions, we accelerate your digital transformation.
             </p>
           </div>
           
@@ -548,7 +607,7 @@ export default function TechiniumLanding() {
                   </div>
                 </CardHeader>
                 <CardContent className="relative z-10 pt-0">
-                  <div className="space-y-2 sm:space-y-3">
+                  <div className="space-y-2 sm:space-y-3 mb-4">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2 sm:gap-3">
                         <Check className="h-4 w-4 text-violet-600 mt-0.5 flex-shrink-0" />
@@ -556,6 +615,14 @@ export default function TechiniumLanding() {
                       </div>
                     ))}
                   </div>
+                  
+                  {service.technologies && (
+                    <div className="mb-4">
+                      <h4 className="text-xs font-semibold text-slate-900 mb-2 uppercase tracking-wide">Technologies</h4>
+                      <p className="text-xs text-slate-600 leading-relaxed">{service.technologies}</p>
+                    </div>
+                  )}
+                  
                   <div className="mt-4 sm:mt-6">
                     <Magnetic>
                       <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50 group-hover:border-violet-300 w-full sm:w-auto">
@@ -571,13 +638,63 @@ export default function TechiniumLanding() {
         </div>
       </section>
 
-      {/* INDUSTRY SOLUTIONS */}
-      <section id="industries" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-slate-50">
+      {/* ADDITIONAL SERVICES */}
+      <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
+            <Badge className="bg-slate-100 text-slate-700 border border-slate-200 mb-4">Extended Capabilities</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Complete Digital Solutions</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
+              Beyond core development, we offer comprehensive digital services including e-commerce, design, 
+              testing, marketing integration, and ongoing support - all delivered with AI-accelerated efficiency.
+            </p>
+          </div>
+          
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {additionalServices.map((service, index) => (
+              <Card key={service.title} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300 will-change-transform hover:-translate-y-1 group">
+                <CardHeader className="pb-3">
+                  <div className="flex items-start gap-3 mb-2">
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 group-hover:from-violet-100 group-hover:to-purple-100 group-hover:border-violet-200 transition-all duration-300">
+                        <span className="text-slate-600 group-hover:text-violet-600 transition-colors duration-300">
+                          {service.icon}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <CardTitle className="text-sm font-semibold text-slate-900 leading-tight">{service.title}</CardTitle>
+                    </div>
+                  </div>
+                  <p className="text-xs text-slate-600 leading-relaxed">{service.desc}</p>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  {service.technologies && (
+                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-2">
+                      <p className="text-xs text-slate-500 font-medium leading-relaxed">{service.technologies}</p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="mt-12 sm:mt-16 text-center">
+            <div className="inline-flex items-center gap-2 bg-white rounded-full border border-slate-200 px-6 py-3 shadow-sm">
+              <Zap className="h-5 w-5 text-violet-600" />
+              <span className="text-sm font-medium text-slate-700">All services delivered with AI-accelerated workflows for 50% faster delivery</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* INDUSTRY SOLUTIONS */}
+      <section id="industries" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Success Stories</Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Industry Expertise</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-              Proven success across industries with tailored AI solutions that deliver measurable results.
+              Proven success across industries with modern web and mobile solutions that deliver real business impact and measurable results.
             </p>
           </div>
           
@@ -621,10 +738,10 @@ export default function TechiniumLanding() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-100 text-violet-700 border border-violet-200 mb-4">Join Our Team</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Build the Future of AI with Us</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Build Amazing Digital Experiences with Us</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Join a team of passionate innovators working on cutting-edge AI projects. We're building tomorrow's 
-              intelligent systems today, and we want you to be part of that journey.
+              Join a team of passionate developers and designers working on cutting-edge web and mobile projects. We're building 
+              tomorrow's digital solutions today, and we want you to be part of that journey.
             </p>
           </div>
           
@@ -636,7 +753,7 @@ export default function TechiniumLanding() {
                   {
                     icon: <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6" />,
                     title: "Innovation-First Culture",
-                    desc: "Work on groundbreaking AI projects that push the boundaries of what's possible."
+                    desc: "Work on cutting-edge web and mobile projects using the latest technologies and frameworks."
                   },
                   {
                     icon: <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6" />,
@@ -680,7 +797,7 @@ export default function TechiniumLanding() {
                     "Latest MacBook Pro + equipment stipend",
                     "Flexible vacation policy",
                     "Annual team retreats & conferences",
-                    "Stock options in a growing AI company",
+                    "Stock options in a growing tech company",
                     "Parental leave & family support"
                   ].map((perk, index) => (
                     <div key={index} className="flex items-center gap-2 sm:gap-3">
@@ -754,14 +871,14 @@ export default function TechiniumLanding() {
               <div className="space-y-4 sm:space-y-6 text-slate-700">
                 <p className="text-base sm:text-lg leading-relaxed">
                   Techinium was founded by a team of seasoned technology leaders with a combined 35+ years of experience 
-                  in web design and software architecture. Our leadership includes veterans from Meta, Amazon, and other 
+                  in web development and software architecture. Our leadership includes veterans from Meta, Amazon, and other 
                   top-tier technology companies.
                 </p>
                 <p className="text-sm sm:text-base leading-relaxed">
-                  We blend decades of design and technical expertise with cutting-edge AI innovation to deliver solutions 
+                  We blend decades of development expertise with cutting-edge AI tools to deliver solutions 
                   that are not just technologically advanced, but also intuitive, scalable, and reliable. Whether you're 
-                  a startup looking to disrupt your industry or an enterprise seeking to optimize operations, we have the 
-                  experience and vision to bring your AI ambitions to life.
+                  a startup looking to disrupt your industry or an enterprise seeking digital transformation, we have the 
+                  experience and vision to bring your digital ambitions to life.
                 </p>
                 <div className="grid grid-cols-2 gap-4 sm:gap-6 pt-4">
                   <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-slate-50">
@@ -769,8 +886,8 @@ export default function TechiniumLanding() {
                     <div className="text-xs sm:text-sm text-slate-600">Years Combined Experience</div>
                   </div>
                   <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-slate-50">
-                    <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">50+</div>
-                    <div className="text-xs sm:text-sm text-slate-600">AI Projects Delivered</div>
+                    <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">100+</div>
+                    <div className="text-xs sm:text-sm text-slate-600">Projects Delivered</div>
                   </div>
                 </div>
               </div>
@@ -799,8 +916,8 @@ export default function TechiniumLanding() {
                   Our Mission
                 </h3>
                 <p className="text-slate-700 leading-relaxed text-sm sm:text-base">
-                  To democratize AI technology by making sophisticated autonomous solutions accessible to businesses 
-                  of all sizes, while maintaining the highest standards of security, reliability, and ethical AI practices.
+                  To democratize modern web and mobile technology by making sophisticated digital solutions accessible to businesses 
+                  of all sizes, while maintaining the highest standards of security, reliability, and performance optimization.
                 </p>
               </div>
               
@@ -808,7 +925,7 @@ export default function TechiniumLanding() {
                 <div className="text-center p-3 sm:p-4 border border-slate-200 rounded-lg bg-white">
                   <Award className="h-6 w-6 sm:h-8 sm:w-8 text-violet-600 mx-auto mb-2" />
                   <div className="text-xs sm:text-sm font-medium text-slate-900">Industry Recognition</div>
-                  <div className="text-xs text-slate-600">AI Innovation Awards</div>
+                  <div className="text-xs text-slate-600">Web Excellence Awards</div>
                 </div>
                 <div className="text-center p-3 sm:p-4 border border-slate-200 rounded-lg bg-white">
                   <Globe className="h-6 w-6 sm:h-8 sm:w-8 text-violet-600 mx-auto mb-2" />
@@ -821,14 +938,202 @@ export default function TechiniumLanding() {
         </div>
       </section>
 
+      {/* TECHNOLOGY STACK */}
+      <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-br from-slate-50 to-violet-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <Badge className="bg-violet-100 text-violet-700 border border-violet-200 mb-4">Technology Stack</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Powered by Modern Technologies</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
+              We leverage the latest and most reliable technologies to deliver high-performance, scalable, and secure solutions 
+              that accelerate your business growth.
+            </p>
+          </div>
+          
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {/* Frontend Technologies */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Code2 className="h-5 w-5 text-violet-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Frontend</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["React", "Angular", "Vue.js", "HTML5", "CSS3", "JavaScript", "TypeScript"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Backend Technologies */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Database className="h-5 w-5 text-purple-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Backend</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["Node.js", "Python", "PHP", ".NET", "Java", "Django", "Laravel", "Spring Boot"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Mobile Technologies */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Phone className="h-5 w-5 text-blue-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Mobile</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["React Native", "Flutter", "Swift", "Kotlin", "Java", "Xamarin", "Ionic"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Cloud & DevOps */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Cloud className="h-5 w-5 text-green-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Cloud & DevOps</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["AWS", "Azure", "GCP", "Docker", "Kubernetes", "Jenkins", "GitHub Actions"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4 mt-6 sm:mt-8">
+            {/* Database Technologies */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Database className="h-5 w-5 text-red-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Databases</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase", "DynamoDB"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* E-commerce Platforms */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Package className="h-5 w-5 text-yellow-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">E-commerce</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["Shopify", "Magento", "WooCommerce", "Adobe Commerce", "Stripe", "PayPal"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Design & Testing */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <Layers className="h-5 w-5 text-pink-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Design & Testing</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["Figma", "Adobe XD", "Framer", "Selenium", "Jest", "Cypress"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-pink-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            
+            {/* Analytics & SEO */}
+            <Card className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="h-5 w-5 text-orange-600" />
+                  <CardTitle className="text-base font-semibold text-slate-900">Analytics & SEO</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="space-y-2">
+                  {["Google Analytics", "SEO Tools", "Social Media APIs", "PPC Platforms", "Content Management"].map((tech) => (
+                    <div key={tech} className="flex items-center gap-2">
+                      <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                      <span className="text-sm text-slate-700 text-xs">{tech}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="mt-12 sm:mt-16 text-center">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white rounded-2xl border border-slate-200 px-6 py-4 shadow-sm">
+              <div className="flex items-center gap-2">
+                <Zap className="h-5 w-5 text-violet-600" />
+                <span className="text-sm font-medium text-slate-700">AI-Accelerated Development</span>
+              </div>
+              <div className="text-xs text-slate-600">Using modern tools and frameworks for 50% faster delivery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Get Started</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Ready to Transform Your Business?</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Ready to Transform Your Digital Presence?</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Let's discuss how Techinium's AI solutions can accelerate your growth and optimize your operations. 
+              Let's discuss how Techinium's web and mobile development services can accelerate your growth and optimize your operations. 
               Schedule a consultation or reach out directly.
             </p>
           </div>
@@ -841,7 +1146,7 @@ export default function TechiniumLanding() {
                   <Rocket className="h-4 w-4 sm:h-5 sm:w-5 text-violet-600" />
                   Project Inquiry
                 </CardTitle>
-                <p className="text-slate-600 text-sm sm:text-base">Tell us about your AI project or business challenge</p>
+                <p className="text-slate-600 text-sm sm:text-base">Tell us about your web or mobile development project</p>
               </CardHeader>
               <CardContent>
                 <form className="space-y-4">
@@ -867,10 +1172,14 @@ export default function TechiniumLanding() {
                     <label className="text-sm font-medium text-slate-700 mb-1 block">Project Type *</label>
                     <select className="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-slate-900 text-sm">
                       <option value="">Select project type</option>
-                      <option value="autonomous-agents">Autonomous Agents</option>
-                      <option value="nlp-tools">NLP Tools</option>
-                      <option value="mlops">MLOps Platform</option>
-                      <option value="consulting">AI Consulting</option>
+                      <option value="web-application">Web Application Development</option>
+                      <option value="mobile-app">Mobile App Development</option>
+                      <option value="full-stack">Full Stack Development</option>
+                      <option value="ecommerce">E-commerce Development</option>
+                      <option value="ui-ux-design">UI/UX Design</option>
+                      <option value="api-integration">API Development & Integration</option>
+                      <option value="digital-transformation">Digital Transformation</option>
+                      <option value="consulting">Web Development Consulting</option>
                       <option value="custom">Custom Solution</option>
                     </select>
                   </div>
@@ -909,7 +1218,7 @@ export default function TechiniumLanding() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <p className="text-slate-700 text-sm sm:text-base">Interested in working with cutting-edge AI technology? We're always looking for talented individuals to join our team.</p>
+                    <p className="text-slate-700 text-sm sm:text-base">Interested in working with cutting-edge web and mobile technology? We're always looking for talented individuals to join our team.</p>
                     <div className="grid gap-3">
                       <Magnetic>
                         <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-100 justify-start w-full">
