@@ -116,112 +116,139 @@ const nav = [
   { label: "Contact", href: "#contact" },
 ];
 
-const clients = ["Meta", "Amazon", "Google", "Microsoft", "Shopify", "Stripe", "Notion", "OpenAI"];
+const clients = ["Malama EV Cabs", "Krushi Vista", "Launch & Lift", "Saga15", "Adchef", "A to Z AI", "Modern Concept"];
 
 const services = [
   { 
     icon: <Code2 className="h-6 w-6" />, 
-    title: "Web Application Development", 
-    desc: "Custom web applications, responsive websites, corporate portals, and PWAs built with modern frameworks and accelerated by AI tools for faster delivery.",
-    features: ["Custom web applications", "Responsive websites & corporate portals", "Progressive Web Apps (PWAs)", "Enterprise application development"],
-    technologies: "HTML5, CSS3, JavaScript, React, Angular, Vue.js, Node.js, PHP, Python, .NET"
+    title: "AI-Powered Web Application Development", 
+    desc: "AI-enhanced web applications, intelligent responsive websites, AI-powered corporate portals, smart PWAs, enterprise applications with ML integration.",
+    features: ["AI-enhanced web applications", "Intelligent responsive websites", "AI-powered corporate portals", "Smart PWAs with ML integration"],
+    technologies: "HTML5, CSS3, JavaScript, React, Angular, Vue.js, Node.js, Python, .NET, TensorFlow, PyTorch, OpenAI API, Hugging Face"
   },
   { 
     icon: <Phone className="h-6 w-6" />, 
-    title: "Mobile App Development", 
-    desc: "Native iOS/Android apps and cross-platform solutions using Flutter, React Native, delivering high-performance mobile experiences.",
-    features: ["Native iOS & Android apps", "Cross-platform solutions (Flutter, React Native)", "Hybrid apps with Xamarin, Ionic", "Mobile-first design approach"],
-    technologies: "Swift, Kotlin, Java, Flutter, React Native, Xamarin, Ionic"
+    title: "AI-Enhanced Mobile App Development", 
+    desc: "AI-integrated native iOS/Android apps, intelligent cross-platform solutions, AI-powered mobile experiences, predictive analytics integration.",
+    features: ["AI-integrated native iOS & Android apps", "Intelligent cross-platform solutions", "AI-powered mobile experiences", "Predictive analytics integration"],
+    technologies: "Swift, Kotlin, Java, Flutter, React Native, Xamarin, TensorFlow Lite, Core ML, ML Kit, PyTorch Mobile, AI/ML SDKs"
   },
   { 
     icon: <Database className="h-6 w-6" />, 
-    title: "Full Stack Development", 
-    desc: "Frontend, backend, database management, API development, and cloud deployment with microservices architecture and AI-accelerated workflows.",
-    features: ["MEAN/MERN stack development", "Backend & database management", "Microservices architecture", "Cloud deployment & scaling"],
-    technologies: "MEAN/MERN stack, Django, Laravel, Spring Boot, microservices"
+    title: "AI-Integrated Full Stack Development", 
+    desc: "AI-enhanced frontend development, intelligent backend systems, ML-powered database management, smart API development, AI cloud deployment.",
+    features: ["AI-enhanced frontend development", "Intelligent backend systems", "ML-powered database management", "Smart API development"],
+    technologies: "MEAN/MERN stack, Django, Laravel, Spring Boot, microservices, TensorFlow, PyTorch, Scikit-learn, Docker, Kubernetes"
   },
   { 
     icon: <Network className="h-6 w-6" />, 
-    title: "API Development & Integration", 
-    desc: "Custom API development (REST, GraphQL), third-party integrations, payment gateways, and secure data communication systems.",
-    features: ["Custom REST & GraphQL APIs", "Third-party integrations", "Payment gateway integration", "Secure data communication"],
-    technologies: "REST APIs, GraphQL, JSON, XML, OAuth, JWT, Postman, Swagger"
+    title: "AI API Development & Integration", 
+    desc: "AI-powered custom API development (REST, GraphQL), intelligent third-party integrations, AI payment processing, ML-enhanced data communication.",
+    features: ["AI-powered custom APIs (REST, GraphQL)", "Intelligent third-party integrations", "AI payment processing", "ML-enhanced data communication"],
+    technologies: "REST APIs, GraphQL, JSON, XML, OAuth, JWT, OpenAI API, Hugging Face API, TensorFlow Serving, MLflow, FastAPI"
   },
 ];
 
 const additionalServices = [
   {
     icon: <Package className="h-5 w-5" />,
-    title: "E-commerce Development",
-    desc: "Online stores, payment integration, inventory management, multi-platform solutions, shopping cart development.",
-    technologies: "Shopify, Magento, WooCommerce, Adobe Commerce, custom platforms"
+    title: "AI-Powered E-commerce Development",
+    desc: "AI-powered online stores, intelligent recommendation engines, automated inventory management, predictive analytics for sales, AI-driven customer insights.",
+    technologies: "Shopify Plus, Magento Commerce, WooCommerce, custom platforms, TensorFlow, scikit-learn, recommendation engines, Apache Spark"
   },
   {
     icon: <Layers className="h-5 w-5" />,
-    title: "UI/UX Design Services",
-    desc: "User research, wireframing, prototyping, visual design, usability testing, responsive design.",
-    technologies: "Figma, Sketch, Adobe XD, InVision, Principle, Framer"
+    title: "AI-Enhanced UI/UX Design Services",
+    desc: "AI-assisted user research, intelligent wireframing, AI-generated prototypes, adaptive visual design, AI-powered usability testing, responsive design automation.",
+    technologies: "Figma, Sketch, Adobe XD, InVision, Framer, AI design tools, automated testing frameworks, user behavior analytics"
   },
   {
     icon: <Lightbulb className="h-5 w-5" />,
-    title: "Digital Transformation",
-    desc: "Legacy system modernization, cloud migration, automation, AI/ML integration, strategic consulting.",
-    technologies: "Cloud platforms, containers, microservices, AI/ML frameworks, automation tools"
-  },
-  {
-    icon: <Briefcase className="h-5 w-5" />,
-    title: "Web Development Consulting",
-    desc: "Architecture guidance, technology selection, performance optimization, security audits, roadmap development.",
-    technologies: "Architecture patterns, performance tools, security frameworks, compliance standards"
+    title: "AI Web Development Consulting",
+    desc: "AI architecture guidance, intelligent technology selection, AI-powered performance optimization, automated security audits, AI roadmap development.",
+    technologies: "Architecture patterns, AI frameworks, performance monitoring, security tools, ML model deployment, cloud-native solutions"
   },
   {
     icon: <Settings2 className="h-5 w-5" />,
-    title: "Website Maintenance & Support",
-    desc: "Software updates, security patches, content management, backup services, performance monitoring.",
-    technologies: "CMS platforms, monitoring tools, backup solutions, security tools"
+    title: "AI-Powered Website Maintenance & Support",
+    desc: "AI-automated software updates, intelligent security monitoring, AI-powered content management, predictive maintenance, performance optimization with ML.",
+    technologies: "CMS platforms, AI monitoring tools, automated backup solutions, predictive maintenance systems, ML-powered security tools"
   },
   {
     icon: <ShieldCheck className="h-5 w-5" />,
-    title: "Quality Assurance & Testing",
-    desc: "Functionality testing, usability testing, performance testing, security testing, automated testing.",
-    technologies: "Selenium, Jest, Cypress, JUnit, load testing tools, security scanners"
+    title: "AI-Enhanced Quality Assurance & Testing",
+    desc: "AI-enhanced functionality testing, intelligent usability testing, ML-powered performance testing, automated security testing, AI-driven test case generation.",
+    technologies: "Selenium, Jest, Cypress, JUnit, AI testing frameworks, automated test generation, ML-powered quality assurance tools"
   },
   {
     icon: <TrendingUp className="h-5 w-5" />,
-    title: "Digital Marketing Integration",
-    desc: "SEO optimization, social media marketing, PPC advertising, content strategy, analytics implementation.",
-    technologies: "Google Analytics, SEO tools, social media platforms, PPC platforms"
+    title: "AI-Driven Digital Marketing Integration",
+    desc: "AI-powered SEO optimization, intelligent content strategy, automated social media marketing, AI-driven PPC optimization, predictive analytics integration.",
+    technologies: "Google Analytics, AI-powered SEO tools, automated content generation, intelligent social media platforms, predictive marketing tools"
   },
   {
     icon: <Cloud className="h-5 w-5" />,
-    title: "Cloud Services & DevOps",
-    desc: "Cloud migration (AWS, Azure, GCP), CI/CD pipelines, automated deployments, monitoring.",
-    technologies: "Docker, Kubernetes, Jenkins, GitHub Actions, monitoring"
+    title: "AI Cloud Services & DevOps",
+    desc: "AI-optimized cloud migration, intelligent CI/CD pipelines, automated deployments with ML monitoring, predictive scaling, AI-powered infrastructure management.",
+    technologies: "Docker, Kubernetes, Jenkins, GitHub Actions, MLOps tools, AI model deployment, intelligent monitoring and scaling solutions"
+  },
+  {
+    icon: <Brain className="h-5 w-5" />,
+    title: "🤖 AI Chatbot Development & Integration",
+    desc: "Custom AI chatbots, conversational AI interfaces, NLP-powered customer support, multi-platform chatbot deployment, intelligent conversation flows.",
+    technologies: "Dialogflow, Microsoft Bot Framework, Rasa, OpenAI API, Natural Language Toolkit, spaCy, TensorFlow, conversational AI platforms"
+  },
+  {
+    icon: <Users className="h-5 w-5" />,
+    title: "🧠 AI Agent Development & Deployment",
+    desc: "Custom AI agents, autonomous task automation, intelligent workflow management, AI-powered decision making systems, multi-agent orchestration.",
+    technologies: "LangChain, AutoGPT, CrewAI, OpenAI API, Hugging Face Transformers, custom AI frameworks, agent orchestration platforms"
   }
 ];
 
 const industries = [
   { 
-    tag: "E-commerce", 
-    title: "E-commerce & Retail", 
+    tag: "Electric Vehicles", 
+    title: "Electric Vehicle & Transportation", 
     icon: <Target className="h-5 w-5" />,
-    points: ["Custom online stores", "Payment gateway integration", "Inventory management systems"],
-    case: "Built a multi-vendor marketplace that increased client sales by 200% within 6 months"
+    points: ["AI-powered fleet management systems", "Route optimization algorithms", "Predictive maintenance platforms"],
+    case: "Developed an AI fleet management system for Malama EV Cabs that reduced operational costs by 45% through intelligent route optimization"
   },
   { 
-    tag: "Finance", 
-    title: "Financial Technology", 
+    tag: "AgriTech", 
+    title: "Agricultural Technology", 
     icon: <TrendingUp className="h-5 w-5" />,
-    points: ["Secure trading platforms", "Digital banking solutions", "Payment processing systems"],
-    case: "Developed a fintech mobile app with 50,000+ active users and 99.9% uptime"
+    points: ["AI-driven crop monitoring solutions", "Yield prediction analytics", "Smart farming automation tools"],
+    case: "Built an AI crop monitoring platform for Krushi Vista that increased yield prediction accuracy by 80%, revolutionizing agricultural decision-making"
   },
   { 
-    tag: "Healthcare", 
-    title: "Healthcare & Medical", 
+    tag: "Startup Ecosystem", 
+    title: "Startup Incubation & Acceleration", 
     icon: <Heart className="h-5 w-5" />,
-    points: ["Patient management systems", "Telemedicine platforms", "Healthcare data analytics"],
-    case: "Created a telehealth platform serving 10,000+ patients during the pandemic"
+    points: ["AI-accelerated development frameworks", "Rapid prototyping solutions", "Market analysis automation"],
+    case: "Created an AI-powered development platform for Launch & Lift that helped portfolio companies go to market 60% faster with intelligent automation"
   },
+  { 
+    tag: "Digital Marketing", 
+    title: "Digital Marketing & Automation", 
+    icon: <Target className="h-5 w-5" />,
+    points: ["Intelligent chatbot systems", "Automated marketing workflows", "AI-driven engagement analytics"],
+    case: "Implemented smart chatbots and automation tools for Saga15 that boosted client engagement by 150% with personalized AI interactions"
+  },
+  { 
+    tag: "AdTech", 
+    title: "Advertising Technology", 
+    icon: <TrendingUp className="h-5 w-5" />,
+    points: ["AI-powered ad optimization platforms", "Real-time campaign analytics", "Automated bidding systems"],
+    case: "Developed an AI ad optimization platform for Adchef that increased campaign performance by 90% through intelligent targeting and automation"
+  },
+  { 
+    tag: "AI Solutions", 
+    title: "Artificial Intelligence & ML", 
+    icon: <Heart className="h-5 w-5" />,
+    points: ["Custom AI agent frameworks", "Machine learning pipelines", "Intelligent automation systems"],
+    case: "Built an AI agent deployment framework for A to Z AI that accelerated their product development by 8 months with autonomous task management"
+  }
 ];
 
 const team = [
@@ -268,7 +295,7 @@ const careers = [
 
 export default function TechiniumLanding() {
   // Rotating hero phrases
-  const words = ["Web Applications", "Mobile Solutions", "Digital Experiences", "AI-Accelerated Development"];
+  const words = ["Web Development", "App Development", "API Integration", "E-commerce Development", "Digital Transformation", "Chatbot Integration", "Agent Deployment"];
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setIndex((i) => (i + 1) % words.length), 2500);
@@ -368,14 +395,17 @@ export default function TechiniumLanding() {
         <motion.div aria-hidden className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-gradient-to-tr from-slate-400 via-violet-400 to-purple-400 blur-3xl opacity-30" animate={{ y: [0, -12, 0] }} transition={{ duration: 7, repeat: Infinity }} />
         <motion.div aria-hidden className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-slate-300 via-violet-300 to-purple-300 blur-3xl opacity-25" animate={{ y: [0, 10, 0] }} transition={{ duration: 8, repeat: Infinity }} />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs text-violet-700">
-                <Brain className="h-3.5 w-3.5" /> AI-Accelerated Development
+                <Brain className="h-3.5 w-3.5" /> AI-Driven Tech Solutions
               </div>
               <h1 className="mt-4 sm:mt-6 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-tight text-slate-900">
                 <span className="block">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600">AI-Powered</span>
+                </span>
+                <span className="block mt-2">
                   <AnimatePresence mode="wait">
                     <motion.span 
                       key={index} 
@@ -383,16 +413,15 @@ export default function TechiniumLanding() {
                       animate={{ opacity: 1, y: 0 }} 
                       exit={{ opacity: 0, y: -12 }} 
                       transition={{ duration: 0.4 }} 
-                      className="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600"
+                      className="text-slate-900 whitespace-nowrap"
                     >
                       {words[index]}
                     </motion.span>
                   </AnimatePresence>
                 </span>
-                <span className="block mt-2">Built Fast & Smart</span>
               </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Lightning-fast web and mobile development powered by AI. Enterprise-grade quality, startup speed.
+                Leverage the power of AI to drive enhanced & optimized results.
               </p>
               <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Magnetic>
@@ -416,7 +445,7 @@ export default function TechiniumLanding() {
                     <Rocket className="h-5 w-5 sm:h-6 sm:w-6 text-violet-600" />
                     <h3 className="font-semibold text-slate-900 text-sm sm:text-base">For Startups</h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600">MVP to market in weeks, not months.</p>
+                  <p className="text-xs sm:text-sm text-slate-600">MVP to markets in days, not months.</p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm">
                   <div className="flex items-center gap-3 mb-2 sm:mb-3">
@@ -458,30 +487,30 @@ export default function TechiniumLanding() {
             </div>
 
             {/* Innovative code-flow visualization */}
-            <div className="relative mt-12 lg:mt-0">
+            <div className="relative mt-8 lg:mt-0">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }} 
                 animate={{ opacity: 1, scale: 1 }} 
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="relative"
               >
-                {/* Main container with glass morphism */}
-                <div className="relative aspect-[4/3] rounded-[32px] bg-gradient-to-br from-white/70 to-slate-50/70 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden">
+                {/* Main container with glass morphism - Made larger */}
+                <div className="relative aspect-[5/4] rounded-[32px] bg-gradient-to-br from-white/70 to-slate-50/70 backdrop-blur-xl border border-white/20 shadow-2xl overflow-hidden">
                   {/* Animated code blocks flowing */}
-                  <div className="absolute inset-0 p-8">
+                  <div className="absolute inset-0 p-6 sm:p-8">
                     {/* Terminal window simulation */}
-                    <div className="absolute top-6 left-6 right-6 h-8 bg-slate-900 rounded-t-lg flex items-center px-4 gap-2">
+                    <div className="absolute top-4 sm:top-6 left-4 sm:left-6 right-4 sm:right-6 h-8 bg-slate-900 rounded-t-lg flex items-center px-4 gap-2">
                       <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                       <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                       <span className="text-xs text-gray-400 ml-4 font-mono">~ building magic</span>
                     </div>
                     
-                    {/* Code editor simulation */}
-                    <div className="absolute top-14 left-6 right-6 bottom-12 bg-slate-900 rounded-b-lg p-4 font-mono text-xs overflow-hidden">
+                    {/* Code editor simulation - Made larger */}
+                    <div className="absolute top-12 sm:top-14 left-4 sm:left-6 right-4 sm:right-6 bottom-8 sm:bottom-12 bg-slate-900 rounded-b-lg p-3 sm:p-4 font-mono text-xs sm:text-sm overflow-hidden">
                       {/* Animated code lines */}
                       <motion.div
-                        className="space-y-1"
+                        className="space-y-1 sm:space-y-2"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1 }}
@@ -501,7 +530,7 @@ export default function TechiniumLanding() {
                           animate={{ width: "auto", opacity: 1 }}
                           transition={{ delay: 1.6, duration: 0.8 }}
                         >
-                          <span className="text-gray-500">2</span> <span className="text-blue-400">export</span> <span className="text-white">function</span> <span className="text-yellow-400">Innovation</span><span className="text-white">()</span>
+                          <span className="text-gray-500">2</span> <span className="text-blue-400">export</span> <span className="text-white">function</span> <span className="text-yellow-400">Innovation</span><span className="text-white">()</span> <span className="text-white">{'{'}</span>
                         </motion.div>
                         
                         <motion.div 
@@ -514,12 +543,30 @@ export default function TechiniumLanding() {
                         </motion.div>
                         
                         <motion.div 
-                          className="text-white ml-4"
+                          className="text-white ml-2"
                           initial={{ width: 0, opacity: 0 }}
                           animate={{ width: "auto", opacity: 1 }}
                           transition={{ delay: 2.4, duration: 0.8 }}
                         >
-                          <span className="text-gray-500">4</span> <span className="text-green-400">{'// AI accelerated build complete'}</span>
+                          <span className="text-gray-500">4</span> <span className="text-white">{'}'}</span>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="text-white"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          transition={{ delay: 2.8, duration: 0.8 }}
+                        >
+                          <span className="text-gray-500">5</span> <span className="text-green-400">{'// AI accelerated build complete ⚡'}</span>
+                        </motion.div>
+                        
+                        <motion.div 
+                          className="text-white"
+                          initial={{ width: 0, opacity: 0 }}
+                          animate={{ width: "auto", opacity: 1 }}
+                          transition={{ delay: 3.2, duration: 0.8 }}
+                        >
+                          <span className="text-gray-500">6</span> <span className="text-blue-400">console</span><span className="text-white">.</span><span className="text-yellow-400">log</span><span className="text-white">(</span><span className="text-green-400">'Deploy successful! 🚀'</span><span className="text-white">)</span>
                         </motion.div>
                       </motion.div>
                       
@@ -531,14 +578,14 @@ export default function TechiniumLanding() {
                       />
                     </div>
                     
-                    {/* Floating data particles */}
-                    {[...Array(12)].map((_, i) => (
+                    {/* Floating data particles - More particles */}
+                    {[...Array(16)].map((_, i) => (
                       <motion.div
                         key={i}
                         className="absolute w-1 h-1 bg-violet-400 rounded-full"
                         style={{
-                          left: `${20 + (i * 6)}%`,
-                          top: `${30 + (i % 3) * 15}%`
+                          left: `${15 + (i * 5)}%`,
+                          top: `${25 + (i % 4) * 12}%`
                         }}
                         animate={{
                           y: [0, -20, 0],
@@ -554,7 +601,7 @@ export default function TechiniumLanding() {
                     ))}
                     
                     {/* AI Processing indicator */}
-                    <div className="absolute bottom-6 left-6 right-6">
+                    <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                       <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                         <div className="flex items-center gap-3">
                           <motion.div
@@ -610,34 +657,63 @@ export default function TechiniumLanding() {
                   />
                 </div>
                 
-                {/* Floating tech badges */}
+                {/* Floating tech badges - More prominent */}
                 <motion.div
-                  className="absolute -top-4 -right-4 bg-white rounded-full p-3 shadow-xl border border-slate-200"
+                  className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-200"
                   animate={{ 
                     y: [0, -10, 0],
                     rotate: [0, 5, 0]
                   }}
                   transition={{ duration: 6, repeat: Infinity }}
                 >
-                  <div className="w-6 h-6 bg-gradient-to-br from-violet-500 to-purple-600 rounded-md flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">AI</span>
+                  <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">AI</span>
+                  </div>
+                </motion.div>
+                
+                {/* React badge */}
+                <motion.div
+                  className="absolute top-1/4 -left-8 bg-white rounded-xl p-3 shadow-lg border border-slate-200"
+                  animate={{ 
+                    x: [0, 8, 0],
+                    rotate: [0, -3, 0]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity }}
+                >
+                  <div className="w-6 h-6 bg-blue-500 rounded-md flex items-center justify-center">
+                    <span className="text-white text-xs font-bold">⚛</span>
                   </div>
                 </motion.div>
                 
                 <motion.div
-                  className="absolute -bottom-4 -left-4 bg-white rounded-full p-3 shadow-xl border border-slate-200"
+                  className="absolute -bottom-8 -left-8 bg-white rounded-2xl p-4 shadow-xl border border-slate-200"
                   animate={{ 
                     y: [0, 10, 0],
                     rotate: [0, -5, 0]
                   }}
                   transition={{ duration: 7, repeat: Infinity }}
                 >
-                  <Zap className="h-6 w-6 text-yellow-500" />
+                  <Zap className="h-8 w-8 text-yellow-500" />
+                </motion.div>
+                
+                {/* Speed indicator */}
+                <motion.div
+                  className="absolute top-1/3 -right-12 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full shadow-lg"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, 0]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  <div className="text-xs font-bold flex items-center gap-1">
+                    <span>50%</span>
+                    <span className="text-[10px]">FASTER</span>
+                  </div>
                 </motion.div>
                 
                 {/* Deploy success notification */}
                 <motion.div
-                  className="absolute top-8 -right-8"
+                  className="absolute top-12 -right-12"
                   initial={{ opacity: 0, x: 50, scale: 0.8 }}
                   animate={{ 
                     opacity: [0, 1, 1, 0],
@@ -651,10 +727,22 @@ export default function TechiniumLanding() {
                     times: [0, 0.2, 0.8, 1]
                   }}
                 >
-                  <div className="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 shadow-lg">
-                    <Check className="w-3 h-3" />
+                  <div className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg">
+                    <Check className="w-4 h-4" />
                     Deployed
                   </div>
+                </motion.div>
+                
+                {/* Security badge */}
+                <motion.div
+                  className="absolute bottom-1/4 -right-10 bg-white rounded-xl p-3 shadow-lg border border-slate-200"
+                  animate={{ 
+                    y: [0, -8, 0],
+                    x: [0, 5, 0]
+                  }}
+                  transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+                >
+                  <ShieldCheck className="h-6 w-6 text-green-600" />
                 </motion.div>
               </motion.div>
             </div>
@@ -667,10 +755,10 @@ export default function TechiniumLanding() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Core Development Services</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Fast-Paced Development with AI Acceleration</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">AI-Powered Development Solutions</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Comprehensive web and mobile development services delivered rapidly using cutting-edge AI tools and modern frameworks. 
-              From custom applications to enterprise solutions, we accelerate your digital transformation.
+              Comprehensive AI-enhanced web and mobile development services delivered rapidly using cutting-edge artificial intelligence, 
+              machine learning, and modern frameworks. From intelligent applications to autonomous systems, we accelerate your digital transformation.
             </p>
           </div>
           
@@ -729,15 +817,15 @@ export default function TechiniumLanding() {
       <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <Badge className="bg-slate-100 text-slate-700 border border-slate-200 mb-4">Extended Capabilities</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Complete Digital Solutions</h2>
+            <Badge className="bg-slate-100 text-slate-700 border border-slate-200 mb-4">AI-Enhanced Capabilities</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Complete AI-Driven Digital Solutions</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Beyond core development, we offer comprehensive digital services including e-commerce, design, 
-              testing, marketing integration, and ongoing support - all delivered with AI-accelerated efficiency.
+              Beyond core development, we offer comprehensive AI-powered digital services including intelligent e-commerce, 
+              automated testing, smart marketing integration, AI chatbots, autonomous agents, and ongoing AI-driven support.
             </p>
           </div>
           
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {additionalServices.map((service, index) => (
               <Card key={service.title} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300 will-change-transform hover:-translate-y-1 group">
                 <CardHeader className="pb-3">
@@ -769,7 +857,7 @@ export default function TechiniumLanding() {
           <div className="mt-12 sm:mt-16 text-center">
             <div className="inline-flex items-center gap-2 bg-white rounded-full border border-slate-200 px-6 py-3 shadow-sm">
               <Zap className="h-5 w-5 text-violet-600" />
-              <span className="text-sm font-medium text-slate-700">All services delivered with AI-accelerated workflows for 50% faster delivery</span>
+              <span className="text-sm font-medium text-slate-700">All services powered by advanced AI and machine learning for intelligent automation</span>
             </div>
           </div>
         </div>
@@ -780,8 +868,9 @@ export default function TechiniumLanding() {
           <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Success Stories</Badge>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Industry Expertise</h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
-              Proven success across industries with modern web and mobile solutions that deliver real business impact and measurable results.
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
+              Proven success across diverse industries with AI-powered web and mobile solutions that 
+              deliver real business impact and measurable results for our clients.
             </p>
           </div>
           
@@ -820,133 +909,172 @@ export default function TechiniumLanding() {
         </div>
       </section>
 
-      {/* CAREERS */}
-      <section id="careers" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50">
+
+      {/* TESTIMONIALS & CASE STUDIES */}
+      <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-br from-slate-50 to-violet-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <Badge className="bg-violet-100 text-violet-700 border border-violet-200 mb-4">Join Our Team</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Build Amazing Digital Experiences with Us</h2>
+            <Badge className="bg-green-50 text-green-700 border border-green-200 mb-4">
+              5.0 ★★★★★ Client Rating
+            </Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Trusted by Industry Leaders</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Join a team of passionate developers and designers working on cutting-edge web and mobile projects. We're building 
-              tomorrow's digital solutions today, and we want you to be part of that journey.
+              See how we've helped companies transform their operations with intelligent AI solutions and accelerated development.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 mb-12 sm:mb-16">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Why Techinium?</h3>
-              <div className="grid gap-4 sm:gap-6">
-                {[
-                  {
-                    icon: <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6" />,
-                    title: "Innovation-First Culture",
-                    desc: "Work on cutting-edge web and mobile projects using the latest technologies and frameworks."
-                  },
-                  {
-                    icon: <TrendingUp className="h-5 w-5 sm:h-6 sm:w-6" />,
-                    title: "Rapid Growth Opportunities",
-                    desc: "Advance your career in a fast-growing company with mentorship from industry veterans."
-                  },
-                  {
-                    icon: <Users className="h-5 w-5 sm:h-6 sm:w-6" />,
-                    title: "World-Class Team",
-                    desc: "Collaborate with experts from Meta, Amazon, and other leading tech companies."
-                  },
-                  {
-                    icon: <Globe className="h-5 w-5 sm:h-6 sm:w-6" />,
-                    title: "Remote-First Flexibility",
-                    desc: "Work from anywhere with flexible hours and a strong work-life balance."
-                  }
-                ].map((benefit, index) => (
-                  <div key={index} className="flex gap-3 sm:gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-white border border-violet-200 text-violet-600">
-                        {benefit.icon}
+          {/* Rotating Testimonials Carousel */}
+          <div className="relative overflow-hidden mb-12 sm:mb-16">
+            <motion.div 
+              className="flex gap-6 sm:gap-8"
+              animate={{ x: [0, -100, -200, -300, -400, -500, -600, 0] }}
+              transition={{ 
+                duration: 28, 
+                repeat: Infinity, 
+                ease: "linear"
+              }}
+            >
+              {[
+                {
+                  company: "Malama EV Cabs",
+                  industry: "Electric Vehicle Services",
+                  quote: "Techinium's AI-powered fleet management system optimized our routes and reduced operational costs by 45%. Outstanding results!",
+                  author: "Saurav K S",
+                  role: "Founder & CEO",
+                  metric: "45% cost reduction",
+                  logo: "🚗"
+                },
+                {
+                  company: "Krushi Vista",
+                  industry: "Agricultural Technology",
+                  quote: "The AI-driven crop monitoring solution increased our yield predictions accuracy by 80%. Game-changing technology for agriculture.",
+                  author: "Akash D",
+                  role: "CTO",
+                  metric: "80% better accuracy",
+                  logo: "🌾"
+                },
+                {
+                  company: "Launch & Lift",
+                  industry: "Startup Incubator",
+                  quote: "Their AI-accelerated development approach helped our portfolio companies go to market 60% faster. Incredible efficiency gains.",
+                  author: "Pushpamala",
+                  role: "Managing Partner",
+                  metric: "60% faster launch",
+                  logo: "🚀"
+                },
+                {
+                  company: "Saga15",
+                  industry: "Digital Marketing",
+                  quote: "The intelligent chatbot and automation tools boosted our client engagement by 150%. ROI exceeded all expectations.",
+                  author: "Shalini G",
+                  role: "Head of Operations",
+                  metric: "150% more engagement",
+                  logo: "📈"
+                },
+                {
+                  company: "Adchef",
+                  industry: "Advertising Technology",
+                  quote: "Techinium's AI-powered ad optimization platform increased our campaign performance by 90%. Exceptional technical expertise.",
+                  author: "Rohit K A",
+                  role: "Chief Technology Officer",
+                  metric: "90% better performance",
+                  logo: "🎯"
+                },
+                {
+                  company: "A to Z AI",
+                  industry: "Artificial Intelligence",
+                  quote: "Their AI agent deployment framework accelerated our product development by 8 months. Truly innovative solutions.",
+                  author: "Dr. Emily Watson",
+                  role: "Founder & CEO",
+                  metric: "8 months faster",
+                  logo: "🤖"
+                },
+                {
+                  company: "Modern Concept",
+                  industry: "Design & Technology",
+                  quote: "The AI-enhanced UI/UX tools and automated testing reduced our design iteration time by 70%. Outstanding collaboration.",
+                  author: "Alex Johnson",
+                  role: "Creative Director",
+                  metric: "70% faster iterations",
+                  logo: "🎨"
+                }
+              ].concat([
+                {
+                  company: "Malama EV Cabs",
+                  industry: "Electric Vehicle Services",
+                  quote: "Techinium's AI-powered fleet management system optimized our routes and reduced operational costs by 45%. Outstanding results!",
+                  author: "Saurav K S",
+                  role: "Founder & CEO",
+                  metric: "45% cost reduction",
+                  logo: "🚗"
+                },
+                {
+                  company: "Krushi Vista",
+                  industry: "Agricultural Technology",
+                  quote: "The AI-driven crop monitoring solution increased our yield predictions accuracy by 80%. Game-changing technology for agriculture.",
+                  author: "Akash D",
+                  role: "CTO",
+                  metric: "80% better accuracy",
+                  logo: "🌾"
+                },
+                {
+                  company: "Launch & Lift",
+                  industry: "Startup Incubator",
+                  quote: "Their AI-accelerated development approach helped our portfolio companies go to market 60% faster. Incredible efficiency gains.",
+                  author: "Pushpamala",
+                  role: "Managing Partner",
+                  metric: "60% faster launch",
+                  logo: "🚀"
+                }
+              ]).map((testimonial, index) => (
+                <Card key={index} className="bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 min-w-[320px] sm:min-w-[380px]">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                      <div className="text-xl sm:text-2xl">{testimonial.logo}</div>
+                      <div>
+                        <div className="font-semibold text-slate-900 text-sm sm:text-base">{testimonial.company}</div>
+                        <div className="text-xs sm:text-sm text-slate-600">{testimonial.industry}</div>
                       </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-slate-900 mb-1 text-sm sm:text-base">{benefit.title}</h4>
-                      <p className="text-slate-600 text-xs sm:text-sm">{benefit.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Perks & Benefits</h3>
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 shadow-sm">
-                <div className="grid gap-3 sm:gap-4">
-                  {[
-                    "Competitive salary + equity packages",
-                    "Health, dental, and vision insurance",
-                    "Annual learning & development budget",
-                    "Latest MacBook Pro + equipment stipend",
-                    "Flexible vacation policy",
-                    "Annual team retreats & conferences",
-                    "Stock options in a growing tech company",
-                    "Parental leave & family support"
-                  ].map((perk, index) => (
-                    <div key={index} className="flex items-center gap-2 sm:gap-3">
-                      <Check className="h-3 w-3 sm:h-4 sm:w-4 text-green-600 flex-shrink-0" />
-                      <span className="text-slate-700 text-xs sm:text-sm">{perk}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 sm:mb-8 text-center">Open Positions</h3>
-            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {careers.map((job, index) => (
-                <Card key={index} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between flex-wrap gap-2">
-                      <div className="min-w-0 flex-1">
-                        <CardTitle className="text-base sm:text-lg pr-2">{job.title}</CardTitle>
-                        <div className="flex items-center gap-2 mt-2 text-xs sm:text-sm text-slate-600">
-                          <MapPin className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
-                          <span>{job.location}</span>
-                        </div>
+                    <blockquote className="text-slate-700 mb-3 sm:mb-4 italic leading-relaxed text-sm sm:text-base">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="font-medium text-slate-900 text-sm">{testimonial.author}</div>
+                        <div className="text-xs text-slate-600">{testimonial.role}</div>
                       </div>
-                      <Badge variant="secondary" className="bg-violet-100 text-violet-700 border-violet-200 text-xs">
-                        {job.type}
-                      </Badge>
+                      <div className="text-right">
+                        <div className="text-sm sm:text-lg font-bold text-green-600">{testimonial.metric}</div>
+                        <div className="text-xs text-slate-500">improvement</div>
+                      </div>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-slate-700 text-xs sm:text-sm mb-4 leading-relaxed">{job.description}</p>
-                    <Magnetic>
-                      <Button className="w-full bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 text-xs sm:text-sm">
-                        Apply Now
-                      </Button>
-                    </Magnetic>
                   </CardContent>
                 </Card>
               ))}
-            </div>
-            
-            <div className="text-center mt-12">
-              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm inline-block">
-                <Coffee className="h-8 w-8 text-violet-600 mx-auto mb-4" />
-                <h4 className="text-lg font-semibold text-slate-900 mb-2">Don't see your role?</h4>
-                <p className="text-slate-600 mb-4">We're always looking for exceptional talent. Send us your resume!</p>
-                <Magnetic>
-                  <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50">
-                    <a href="mailto:careers@techinium.ai?subject=Open Application" className="inline-flex items-center">
-                      Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </Magnetic>
-              </div>
+            </motion.div>
+          </div>
+          
+          {/* Case Study Highlights */}
+          <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 text-center mb-6 sm:mb-8">Our Impact Across Industries</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+              {[
+                { number: "₹25Cr+", label: "Business Value Generated", desc: "Delivered through AI-powered solutions for our clients" },
+                { number: "7", label: "Industry Verticals", desc: "Successfully transformed with AI solutions" },
+                { number: "95%", label: "Client Satisfaction", desc: "Exceptional project delivery and support" },
+                { number: "60%", label: "Faster Development", desc: "Average acceleration with AI-powered workflows" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-violet-600 mb-2">{stat.number}</div>
+                  <div className="font-semibold text-slate-900 mb-1 text-sm sm:text-base">{stat.label}</div>
+                  <div className="text-xs sm:text-sm text-slate-600">{stat.desc}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-
-
 
       {/* ABOUT US */}
       <section id="about" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
@@ -1389,92 +1517,100 @@ export default function TechiniumLanding() {
         </div>
       </section>
 
-      {/* TESTIMONIALS & CASE STUDIES */}
-      <section className="py-24 border-t border-slate-200 bg-gradient-to-br from-slate-50 to-violet-50">
+      {/* CAREERS */}
+      <section id="careers" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge className="bg-green-50 text-green-700 border border-green-200 mb-4">
-              5.0 ★★★★★ Client Rating
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Trusted by Industry Leaders</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              See how we've helped companies transform their operations with intelligent AI solutions.
+          <div className="text-center mb-12 sm:mb-16">
+            <Badge className="bg-violet-100 text-violet-700 border border-violet-200 mb-4">Join Our Team</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Build Amazing Digital Experiences with Us</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
+              Join a team of passionate developers and designers working on cutting-edge web and mobile projects. We're building 
+              tomorrow's digital solutions today, and we want you to be part of that journey.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {[
-              {
-                company: "FinTech Startup",
-                industry: "Financial Services",
-                quote: "Techinium's AI agents reduced our customer support response time by 75% while maintaining quality. The ROI was immediate.",
-                author: "Sarah Chen",
-                role: "CTO",
-                metric: "75% faster responses",
-                logo: "💰"
-              },
-              {
-                company: "E-commerce Platform",
-                industry: "Retail Technology",
-                quote: "The recommendation engine they built increased our conversion rates by 40%. Their MLOps platform keeps everything running smoothly.",
-                author: "Michael Rodriguez",
-                role: "Head of Engineering",
-                metric: "40% higher conversions",
-                logo: "🛒"
-              },
-              {
-                company: "Healthcare AI Startup",
-                industry: "Healthcare",
-                quote: "Working with Techinium accelerated our product development by 6 months. Their expertise in NLP was exactly what we needed.",
-                author: "Dr. Emily Watson",
-                role: "Founder & CEO",
-                metric: "6 months faster to market",
-                logo: "🏥"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="bg-white border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardContent className="pt-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-2xl">{testimonial.logo}</div>
-                    <div>
-                      <div className="font-semibold text-slate-900">{testimonial.company}</div>
-                      <div className="text-sm text-slate-600">{testimonial.industry}</div>
+          <div className="max-w-5xl mx-auto mb-12 sm:mb-16">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-8 sm:mb-10 text-center">Why Join Techinium?</h3>
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  icon: <Lightbulb className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "Innovation-First Culture",
+                  desc: "Work on cutting-edge web and mobile projects using the latest technologies and frameworks."
+                },
+                {
+                  icon: <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "Rapid Growth Opportunities",
+                  desc: "Advance your career in a fast-growing company with mentorship from industry veterans."
+                },
+                {
+                  icon: <Users className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "World-Class Team",
+                  desc: "Collaborate with experts from Meta, Amazon, and other leading tech companies."
+                },
+                {
+                  icon: <Globe className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "Remote-First Flexibility",
+                  desc: "Work from anywhere with flexible hours and a strong work-life balance."
+                }
+              ].map((benefit, index) => (
+                <Card key={index} className="bg-white border border-violet-200 hover:shadow-lg transition-all duration-300 text-center">
+                  <CardContent className="p-6">
+                    <div className="inline-flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200 mb-4 text-violet-600">
+                      {benefit.icon}
                     </div>
-                  </div>
-                  <blockquote className="text-slate-700 mb-4 italic leading-relaxed">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="font-medium text-slate-900">{testimonial.author}</div>
-                      <div className="text-sm text-slate-600">{testimonial.role}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-lg font-bold text-green-600">{testimonial.metric}</div>
-                      <div className="text-xs text-slate-500">improvement</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <h4 className="font-semibold text-slate-900 mb-2 text-sm sm:text-base">{benefit.title}</h4>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">{benefit.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
           
-          {/* Case Study Highlights */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-lg">
-            <h3 className="text-2xl font-bold text-slate-900 text-center mb-8">Success Stories by the Numbers</h3>
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { number: "₹50Cr+", label: "Value Generated", desc: "For our clients through AI automation" },
-                { number: "99.9%", label: "Uptime SLA", desc: "Maintained across all deployments" },
-                { number: "50+", label: "AI Projects", desc: "Successfully delivered and scaled" },
-                { number: "15+", label: "Industries", desc: "Served with tailored solutions" }
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-3xl font-bold text-violet-600 mb-2">{stat.number}</div>
-                  <div className="font-semibold text-slate-900 mb-1">{stat.label}</div>
-                  <div className="text-sm text-slate-600">{stat.desc}</div>
-                </div>
+          <div>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-6 sm:mb-8 text-center">Open Positions</h3>
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {careers.map((job, index) => (
+                <Card key={index} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-start justify-between flex-wrap gap-2">
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-base sm:text-lg pr-2">{job.title}</CardTitle>
+                        <div className="flex items-center gap-2 mt-2 text-xs sm:text-sm text-slate-600">
+                          <MapPin className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
+                          <span>{job.location}</span>
+                        </div>
+                      </div>
+                      <Badge variant="secondary" className="bg-violet-100 text-violet-700 border-violet-200 text-xs">
+                        {job.type}
+                      </Badge>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-700 text-xs sm:text-sm mb-4 leading-relaxed">{job.description}</p>
+                    <Magnetic>
+                      <Button className="w-full bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 text-xs sm:text-sm">
+                        Apply Now
+                      </Button>
+                    </Magnetic>
+                  </CardContent>
+                </Card>
               ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm inline-block">
+                <Coffee className="h-8 w-8 text-violet-600 mx-auto mb-4" />
+                <h4 className="text-lg font-semibold text-slate-900 mb-2">Don't see your role?</h4>
+                <p className="text-slate-600 mb-4">We're always looking for exceptional talent. Send us your resume!</p>
+                <Magnetic>
+                  <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50">
+                    <a href="mailto:careers@techinium.ai?subject=Open Application" className="inline-flex items-center">
+                      Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </Magnetic>
+              </div>
             </div>
           </div>
         </div>
