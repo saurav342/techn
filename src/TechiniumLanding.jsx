@@ -336,8 +336,8 @@ export default function TechiniumLanding() {
     try {
       // EmailJS configuration - replace with your actual IDs
       await emailjs.send(
-        'service_1x5j9ks', // Your EmailJS service ID - replace this
-        'template_xyz123', // Your EmailJS template ID - replace this
+        'service_q6t3zx4', // Your EmailJS service ID - replace this
+        'template_hr9u6th', // Your EmailJS template ID - replace this
         {
           from_name: formData.name,
           from_company: formData.company,
@@ -347,7 +347,7 @@ export default function TechiniumLanding() {
           message: formData.projectDetails,
           to_email: 'hello@techinium.com'
         },
-        'your_public_key' // Your EmailJS public key - replace this
+        'L-UGXLM3_6CD8X5i3' // Your EmailJS public key - replace this
       );
       
       setSubmitStatus('success');
