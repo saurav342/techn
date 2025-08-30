@@ -1830,7 +1830,7 @@ export default function TechiniumLanding() {
                 <p className="text-slate-600 mb-4">We're always looking for exceptional talent. Send us your resume!</p>
                 <Magnetic>
                   <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50">
-                    <a href="mailto:careers@techinium.com?subject=Open Application" className="inline-flex items-center">
+                    <a href="#contact" className="inline-flex items-center">
                       Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
