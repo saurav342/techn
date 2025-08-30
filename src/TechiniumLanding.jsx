@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from '@emailjs/browser';
 import {
   Rocket,
   ShieldCheck,
@@ -305,6 +306,66 @@ const careers = [
 ];
 
 export default function TechiniumLanding() {
+  // Form state for project inquiry
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    projectType: '',
+    projectDetails: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      // EmailJS configuration - replace with your actual IDs
+      await emailjs.send(
+        'service_1x5j9ks', // Your EmailJS service ID - replace this
+        'template_xyz123', // Your EmailJS template ID - replace this
+        {
+          from_name: formData.name,
+          from_company: formData.company,
+          from_email: formData.email,
+          phone: formData.phone,
+          project_type: formData.projectType,
+          message: formData.projectDetails,
+          to_email: 'hello@techinium.com'
+        },
+        'your_public_key' // Your EmailJS public key - replace this
+      );
+      
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        projectType: '',
+        projectDetails: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   // Rotating hero phrases
   const words = ["Web Development", "App Development", "API Integration", "E-commerce Development", "Digital Transformation", "Chatbot Integration", "Agent Deployment"];
   const [index, setIndex] = useState(0);
@@ -1462,28 +1523,63 @@ export default function TechiniumLanding() {
                 <p className="text-slate-600 text-sm sm:text-base">Tell us about your AI-powered development project</p>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div>
                       <label className="text-sm font-medium text-slate-700 mb-1 block">Name *</label>
-                      <Input placeholder="Your name" className="bg-white border-slate-300" required />
+                      <Input 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder="Your name" 
+                        className="bg-white border-slate-300" 
+                        required 
+                      />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-slate-700 mb-1 block">Company *</label>
-                      <Input placeholder="Company name" className="bg-white border-slate-300" required />
+                      <Input 
+                        name="company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        placeholder="Company name" 
+                        className="bg-white border-slate-300" 
+                        required 
+                      />
                     </div>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-1 block">Work Email *</label>
-                    <Input type="email" placeholder="you@company.com" className="bg-white border-slate-300" required />
+                    <Input 
+                      name="email"
+                      type="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="you@company.com" 
+                      className="bg-white border-slate-300" 
+                      required 
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-1 block">Phone</label>
-                    <Input type="tel" placeholder="+91 8618847716" className="bg-white border-slate-300" />
+                    <Input 
+                      name="phone"
+                      type="tel" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="+91 8618847716" 
+                      className="bg-white border-slate-300" 
+                    />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-1 block">Project Type *</label>
-                    <select className="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-slate-900 text-sm">
+                    <select 
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-md bg-white text-slate-900 text-sm"
+                      required
+                    >
                       <option value="">Select project type</option>
                       <option value="ai-integration">AI Integration & Automation</option>
                       <option value="web-application">Web Application Development</option>
@@ -1500,20 +1596,50 @@ export default function TechiniumLanding() {
                   <div>
                     <label className="text-sm font-medium text-slate-700 mb-1 block">Project Details *</label>
                     <Textarea 
+                      name="projectDetails"
+                      value={formData.projectDetails}
+                      onChange={handleInputChange}
                       rows={4} 
                       placeholder="Describe your project goals, current challenges, timeline, and budget range..." 
                       className="bg-white border-slate-300 text-sm" 
                       required 
                     />
                   </div>
+                  
+                  {/* Status messages */}
+                  {submitStatus === 'success' && (
+                    <div className="flex items-center gap-2 text-sm text-green-600 bg-green-50 p-3 rounded-lg border border-green-200">
+                      <Check className="h-4 w-4" />
+                      <span>Thank you! Your inquiry has been sent successfully. We'll get back to you soon.</span>
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 p-3 rounded-lg border border-red-200">
+                      <span>Sorry, there was an error sending your inquiry. Please try again or contact us directly.</span>
+                    </div>
+                  )}
+                  
                   <div className="flex items-center gap-2 text-xs text-slate-600">
                     <ShieldCheck className="h-4 w-4 text-green-600" />
                     <span>Your information is secure and never shared with third parties.</span>
                   </div>
                   <Magnetic>
-                    <Button type="submit" className="w-full bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 py-3">
-                      Request Consultation
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="w-full bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 py-3 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent mr-2" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Request Consultation
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </>
+                      )}
                     </Button>
                   </Magnetic>
                 </form>
