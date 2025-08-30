@@ -1,0 +1,35 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techinium-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6BB26B" />
+      <stop offset="50%" stop-color="#8DC73F" />
+      <stop offset="100%" stop-color="#C8D946" />
+    </linearGradient>
+    <linearGradient id="node-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7BC142" />
+      <stop offset="100%" stop-color="#A8C73C" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer circle -->
+  <circle cx="32" cy="32" r="30" fill="none" stroke="url(#techinium-gradient)" stroke-width="2" />
+  
+  <!-- Network nodes -->
+  <circle cx="32" cy="18" r="4" fill="url(#node-gradient)" />
+  <circle cx="45" cy="25" r="3.5" fill="url(#node-gradient)" />
+  <circle cx="45" cy="39" r="3.5" fill="url(#node-gradient)" />
+  <circle cx="32" cy="46" r="4" fill="url(#node-gradient)" />
+  <circle cx="19" cy="39" r="3.5" fill="url(#node-gradient)" />
+  <circle cx="19" cy="25" r="3.5" fill="url(#node-gradient)" />
+  <circle cx="32" cy="32" r="3" fill="url(#node-gradient)" />
+  
+  <!-- Connecting lines -->
+  <path d="M32 18 L32 29" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M32 35 L32 46" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M35 32 L42 36" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M29 32 L22 36" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M35 29 L42 26" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M29 29 L22 26" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M35 35 L42 39" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M29 35 L22 39" stroke="url(#node-gradient)" stroke-width="2.5" stroke-linecap="round" />
+</svg>

@@ -45,19 +45,38 @@ function LogoAI({ className = "h-6 w-6" }) {
   return (
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" className={className}>
       <defs>
-        <linearGradient id="techinium-gradient" x1="0" x2="1">
-          <stop offset="0%" stopColor="#1A2E45" />
-          <stop offset="50%" stopColor="#6A0DAD" />
-          <stop offset="100%" stopColor="#8B5CF6" />
+        <linearGradient id="techinium-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#6BB26B" />
+          <stop offset="50%" stopColor="#8DC73F" />
+          <stop offset="100%" stopColor="#C8D946" />
+        </linearGradient>
+        <linearGradient id="node-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#7BC142" />
+          <stop offset="100%" stopColor="#A8C73C" />
         </linearGradient>
       </defs>
-      <rect x="8" y="8" width="48" height="48" rx="16" fill="none" stroke="url(#techinium-gradient)" strokeWidth="3" />
-      <circle cx="20" cy="20" r="2" fill="url(#techinium-gradient)" />
-      <circle cx="44" cy="20" r="2" fill="url(#techinium-gradient)" />
-      <circle cx="32" cy="32" r="3" fill="url(#techinium-gradient)" />
-      <circle cx="20" cy="44" r="2" fill="url(#techinium-gradient)" />
-      <circle cx="44" cy="44" r="2" fill="url(#techinium-gradient)" />
-      <path d="M20 20 L32 32 L44 20 M20 44 L32 32 L44 44" stroke="url(#techinium-gradient)" strokeWidth="2" strokeLinecap="round" />
+      
+      {/* Outer circle */}
+      <circle cx="32" cy="32" r="30" fill="none" stroke="url(#techinium-gradient)" strokeWidth="2" />
+      
+      {/* Network nodes */}
+      <circle cx="32" cy="18" r="4" fill="url(#node-gradient)" />
+      <circle cx="45" cy="25" r="3.5" fill="url(#node-gradient)" />
+      <circle cx="45" cy="39" r="3.5" fill="url(#node-gradient)" />
+      <circle cx="32" cy="46" r="4" fill="url(#node-gradient)" />
+      <circle cx="19" cy="39" r="3.5" fill="url(#node-gradient)" />
+      <circle cx="19" cy="25" r="3.5" fill="url(#node-gradient)" />
+      <circle cx="32" cy="32" r="3" fill="url(#node-gradient)" />
+      
+      {/* Connecting lines */}
+      <path d="M32 18 L32 29" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M32 35 L32 46" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M35 32 L42 36" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M29 32 L22 36" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M35 29 L42 26" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M29 29 L22 26" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M35 35 L42 39" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
+      <path d="M29 35 L22 39" stroke="url(#node-gradient)" strokeWidth="2.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -101,16 +120,23 @@ function Magnetic({ children, radius = 120 }) {
 
 // --- Data ---
 const nav = [
+  { label: "Home", href: "#home" },
   { 
-    label: "Solutions", 
+    label: "Services", 
     href: "#solutions",
     dropdown: [
-      { label: "Autonomous Agents", href: "#agents" },
-      { label: "NLP Tools", href: "#nlp" },
-      { label: "MLOps Platforms", href: "#mlops" },
-      { label: "AI Consulting", href: "#consulting" }
+      { label: "Web Development", href: "#solutions" },
+      { label: "Mobile App Development", href: "#solutions" },
+      { label: "Full Stack Development", href: "#solutions" },
+      { label: "API Development", href: "#solutions" },
+      { label: "E-commerce Development", href: "#solutions" },
+      { label: "UI/UX Design", href: "#solutions" },
+      { label: "AI Chatbots", href: "#solutions" },
+      { label: "AI Agents", href: "#solutions" },
+      { label: "Consulting", href: "#solutions" }
     ]
   },
+  { label: "Industries", href: "#industries" },
   { label: "About", href: "#about" },
   { label: "Careers", href: "#careers" },
   { label: "Contact", href: "#contact" },
@@ -253,22 +279,28 @@ const industries = [
 
 const careers = [
   {
-    title: "Senior Full Stack Developer",
+    title: "AI-Powered Full Stack Developer",
     location: "Bengaluru / Remote",
     type: "Full-time",
-    description: "Lead development of modern web applications using React, Node.js, and cloud technologies for enterprise clients."
+    description: "Lead development of intelligent web applications using AI-assisted coding, React, Node.js, and advanced automation technologies."
   },
   {
-    title: "Mobile App Developer",
+    title: "AI Solutions Engineer",
     location: "Bengaluru / Remote", 
     type: "Full-time",
-    description: "Build native and cross-platform mobile applications using React Native, Flutter, and native technologies."
+    description: "Build and deploy AI agents, chatbots, and intelligent automation systems for diverse industry applications."
   },
   {
-    title: "UI/UX Designer",
+    title: "AI-Enhanced Mobile Developer",
     location: "Bengaluru / Remote",
     type: "Full-time", 
-    description: "Design intuitive and beautiful user interfaces for web and mobile applications with focus on user experience."
+    description: "Create smart mobile applications with AI integration using React Native, Flutter, and machine learning capabilities."
+  },
+  {
+    title: "AI-Driven UI/UX Designer",
+    location: "Bengaluru / Remote",
+    type: "Full-time", 
+    description: "Design intelligent user experiences leveraging AI insights and user behavior analytics for optimal engagement."
   }
 ];
 
@@ -350,11 +382,6 @@ export default function TechiniumLanding() {
             ))}
           </nav>
           <div className="flex items-center gap-2 sm:gap-3">
-            <Magnetic>
-              <Button asChild variant="secondary" className="hidden md:inline-flex border border-slate-200 bg-white hover:bg-slate-50 text-xs sm:text-sm px-3 sm:px-4">
-                <a href="#contact">Schedule Demo</a>
-              </Button>
-            </Magnetic>
             <Magnetic>
               <Button asChild size="sm" className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 text-white hover:brightness-110 shadow-md text-xs sm:text-sm px-3 sm:px-4">
                 <a href="#contact" className="inline-flex items-center">
@@ -729,112 +756,120 @@ export default function TechiniumLanding() {
         </div>
       </section>
 
-      {/* CORE DEVELOPMENT SERVICES */}
-      <section id="solutions" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-white">
+      {/* COMPREHENSIVE AI-POWERED SOLUTIONS */}
+      <section id="solutions" className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-gradient-to-br from-white via-slate-50/30 to-violet-50/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">Core Development Services</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">AI-Powered Development Solutions</h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Comprehensive AI-enhanced web and mobile development services delivered rapidly using cutting-edge artificial intelligence, 
-              machine learning, and modern frameworks. From intelligent applications to autonomous systems, we accelerate your digital transformation.
+            <Badge className="bg-gradient-to-r from-violet-50 to-purple-50 text-violet-700 border border-violet-200 mb-4">Comprehensive AI Solutions</Badge>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+              <span className="bg-gradient-to-r from-slate-700 via-violet-600 to-purple-600 bg-clip-text text-transparent">
+                AI-Powered Development Solutions
+              </span>
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-4xl mx-auto">
+              Comprehensive AI-enhanced development services from core web and mobile applications to advanced AI integrations, 
+              intelligent automation, and ongoing support. We accelerate your digital transformation with cutting-edge AI technologies.
             </p>
           </div>
           
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-            {services.map((service, index) => (
-              <Card key={service.title} className="bg-white border border-slate-200 hover:shadow-xl transition-all duration-300 will-change-transform hover:-translate-y-1 group overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <CardHeader className="relative z-10 pb-4">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200 group-hover:from-violet-200 group-hover:to-purple-200 transition-all duration-300">
-                        <span className="text-violet-600 group-hover:text-violet-700 transition-colors duration-300">
-                          {service.icon}
-                        </span>
+          {/* Core Development Services */}
+          <div className="mb-16 sm:mb-20">
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Core Development Services</h3>
+              <p className="text-slate-600 max-w-2xl mx-auto">Foundation AI-powered development solutions for web, mobile, and full-stack applications</p>
+            </div>
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
+              {services.map((service, index) => (
+                <Card key={service.title} className="bg-gradient-to-br from-white to-violet-50/30 border border-violet-200/50 hover:shadow-xl transition-all duration-300 will-change-transform hover:-translate-y-1 group overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-50/40 to-purple-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <CardHeader className="relative z-10 pb-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-100 to-purple-100 border border-violet-200 group-hover:from-violet-200 group-hover:to-purple-200 transition-all duration-300">
+                          <span className="text-violet-600 group-hover:text-violet-700 transition-colors duration-300">
+                            {service.icon}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <CardTitle className="text-lg sm:text-xl text-slate-900 mb-2">{service.title}</CardTitle>
+                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{service.desc}</p>
                       </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <CardTitle className="text-lg sm:text-xl text-slate-900 mb-2">{service.title}</CardTitle>
-                      <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{service.desc}</p>
+                  </CardHeader>
+                  <CardContent className="relative z-10 pt-0">
+                    <div className="space-y-2 sm:space-y-3 mb-4">
+                      {service.features.map((feature) => (
+                        <div key={feature} className="flex items-start gap-2 sm:gap-3">
+                          <Check className="h-4 w-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm text-slate-700">{feature}</span>
+                        </div>
+                      ))}
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="relative z-10 pt-0">
-                  <div className="space-y-2 sm:space-y-3 mb-4">
-                    {service.features.map((feature) => (
-                      <div key={feature} className="flex items-start gap-2 sm:gap-3">
-                        <Check className="h-4 w-4 text-violet-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm text-slate-700">{feature}</span>
+                    
+                    {service.technologies && (
+                      <div className="mb-4">
+                        <h4 className="text-xs font-semibold text-slate-900 mb-2 uppercase tracking-wide">Technologies</h4>
+                        <p className="text-xs text-slate-600 leading-relaxed">{service.technologies}</p>
                       </div>
-                    ))}
-                  </div>
-                  
-                  {service.technologies && (
-                    <div className="mb-4">
-                      <h4 className="text-xs font-semibold text-slate-900 mb-2 uppercase tracking-wide">Technologies</h4>
-                      <p className="text-xs text-slate-600 leading-relaxed">{service.technologies}</p>
-                    </div>
-                  )}
-                  
-                  <div className="mt-4 sm:mt-6">
-                    <Magnetic>
-                      <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50 group-hover:border-violet-300 w-full sm:w-auto">
-                        Learn More
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Magnetic>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                    )}
+                    
 
-      {/* ADDITIONAL SERVICES */}
-      <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <Badge className="bg-slate-100 text-slate-700 border border-slate-200 mb-4">AI-Enhanced Capabilities</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Complete AI-Driven Digital Solutions</h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Beyond core development, we offer comprehensive AI-powered digital services including intelligent e-commerce, 
-              automated testing, smart marketing integration, AI chatbots, autonomous agents, and ongoing AI-driven support.
-            </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
           
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {additionalServices.map((service, index) => (
-              <Card key={service.title} className="bg-white border border-slate-200 hover:shadow-lg transition-all duration-300 will-change-transform hover:-translate-y-1 group">
-                <CardHeader className="pb-3">
-                  <div className="flex items-start gap-3 mb-2">
-                    <div className="flex-shrink-0">
-                      <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 border border-slate-200 group-hover:from-violet-100 group-hover:to-purple-100 group-hover:border-violet-200 transition-all duration-300">
-                        <span className="text-slate-600 group-hover:text-violet-600 transition-colors duration-300">
-                          {service.icon}
-                        </span>
+          {/* Additional AI Services */}
+          <div>
+            <div className="text-center mb-8 sm:mb-12">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">Enhanced AI Capabilities</h3>
+              <p className="text-slate-600 max-w-2xl mx-auto">Specialized AI-powered services for e-commerce, design, consulting, and intelligent automation</p>
+            </div>
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {additionalServices.map((service, index) => {
+                const colors = [
+                  { bg: "from-blue-50/60 to-cyan-50/60", border: "border-blue-200/60", icon: "from-blue-100 to-cyan-100", iconHover: "group-hover:from-blue-200 group-hover:to-cyan-200", iconText: "text-blue-600 group-hover:text-blue-700" },
+                  { bg: "from-green-50/60 to-emerald-50/60", border: "border-green-200/60", icon: "from-green-100 to-emerald-100", iconHover: "group-hover:from-green-200 group-hover:to-emerald-200", iconText: "text-green-600 group-hover:text-green-700" },
+                  { bg: "from-purple-50/60 to-pink-50/60", border: "border-purple-200/60", icon: "from-purple-100 to-pink-100", iconHover: "group-hover:from-purple-200 group-hover:to-pink-200", iconText: "text-purple-600 group-hover:text-purple-700" },
+                  { bg: "from-orange-50/60 to-yellow-50/60", border: "border-orange-200/60", icon: "from-orange-100 to-yellow-100", iconHover: "group-hover:from-orange-200 group-hover:to-yellow-200", iconText: "text-orange-600 group-hover:text-orange-700" },
+                  { bg: "from-teal-50/60 to-sky-50/60", border: "border-teal-200/60", icon: "from-teal-100 to-sky-100", iconHover: "group-hover:from-teal-200 group-hover:to-sky-200", iconText: "text-teal-600 group-hover:text-teal-700" },
+                  { bg: "from-rose-50/60 to-red-50/60", border: "border-rose-200/60", icon: "from-rose-100 to-red-100", iconHover: "group-hover:from-rose-200 group-hover:to-red-200", iconText: "text-rose-600 group-hover:text-rose-700" }
+                ];
+                const colorSet = colors[index % colors.length];
+                return (
+                  <Card key={service.title} className={`bg-gradient-to-br from-white ${colorSet.bg} border ${colorSet.border} hover:shadow-lg transition-all duration-300 will-change-transform hover:-translate-y-1 group`}>
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start gap-3 mb-2">
+                        <div className="flex-shrink-0">
+                          <div className={`inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${colorSet.icon} ${colorSet.iconHover} border ${colorSet.border} transition-all duration-300`}>
+                            <span className={`${colorSet.iconText} transition-colors duration-300`}>
+                              {service.icon}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <CardTitle className="text-sm font-semibold text-slate-900 leading-tight">{service.title}</CardTitle>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <CardTitle className="text-sm font-semibold text-slate-900 leading-tight">{service.title}</CardTitle>
-                    </div>
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">{service.desc}</p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  {service.technologies && (
-                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-2">
-                      <p className="text-xs text-slate-500 font-medium leading-relaxed">{service.technologies}</p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
+                      <p className="text-xs text-slate-600 leading-relaxed">{service.desc}</p>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      {service.technologies && (
+                        <div className={`bg-gradient-to-r ${colorSet.bg} border ${colorSet.border} rounded-lg p-2`}>
+                          <p className="text-xs text-slate-500 font-medium leading-relaxed">{service.technologies}</p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
           </div>
           
           <div className="mt-12 sm:mt-16 text-center">
-            <div className="inline-flex items-center gap-2 bg-white rounded-full border border-slate-200 px-6 py-3 shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full border border-violet-200 px-6 py-3 shadow-sm">
               <Zap className="h-5 w-5 text-violet-600" />
               <span className="text-sm font-medium text-slate-700">All services powered by advanced AI and machine learning for intelligent automation</span>
             </div>
@@ -1270,7 +1305,7 @@ export default function TechiniumLanding() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="text-center lg:text-left">
               <Badge className="bg-violet-50 text-violet-700 border border-violet-200 mb-4">About Techinium</Badge>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">AI-First Development Company</h2>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">AI-Enabled Tech Solution Company</h2>
               <div className="space-y-4 sm:space-y-6 text-slate-700">
                 <p className="text-base sm:text-lg leading-relaxed">
                   Techinium is an AI-first development company founded with a vision to revolutionize how digital solutions are built. 
@@ -1282,7 +1317,7 @@ export default function TechiniumLanding() {
                   applications that not only meet today's requirements but adapt and evolve with your business. We've successfully 
                   transformed operations for companies like Malama EV Cabs, Krushi Vista, Launch & Lift, and many others.
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
+                <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
                   <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50">
                     <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">2024</div>
                     <div className="text-xs sm:text-sm text-slate-600">Founded</div>
@@ -1295,7 +1330,9 @@ export default function TechiniumLanding() {
                     <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">10+</div>
                     <div className="text-xs sm:text-sm text-slate-600">Industries Served</div>
                   </div>
-                  <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50 col-span-2 sm:col-span-4">
+                </div>
+                <div className="grid grid-cols-1 gap-3 sm:gap-4 pt-3 sm:pt-4">
+                  <div className="text-center p-3 sm:p-4 rounded-lg border border-slate-200 bg-gradient-to-br from-violet-50 to-purple-50">
                     <div className="text-xl sm:text-2xl font-bold text-violet-600 mb-1">20+</div>
                     <div className="text-xs sm:text-sm text-slate-600">Years Combined Experience</div>
                   </div>
@@ -1584,10 +1621,10 @@ export default function TechiniumLanding() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <Badge className="bg-violet-100 text-violet-700 border border-violet-200 mb-4">Join Our Team</Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Build Amazing Digital Experiences with Us</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Shape the Future of AI-Powered Development</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto">
-              Join a team of passionate developers and designers working on cutting-edge web and mobile projects. We're building 
-              tomorrow's digital solutions today, and we want you to be part of that journey.
+              Join a pioneering team of AI-first developers and innovators building intelligent solutions that transform industries. 
+              We're not just coding the future – we're creating AI-powered experiences that revolutionize how businesses operate.
             </p>
           </div>
           
@@ -1596,24 +1633,24 @@ export default function TechiniumLanding() {
             <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
-                  icon: <Lightbulb className="h-6 w-6 sm:h-7 sm:w-7" />,
-                  title: "Innovation-First Culture",
-                  desc: "Work on cutting-edge web and mobile projects using the latest technologies and frameworks."
+                  icon: <Brain className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "AI-First Innovation",
+                  desc: "Work with cutting-edge AI technologies and tools that accelerate development and enhance capabilities."
                 },
                 {
-                  icon: <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7" />,
-                  title: "Rapid Growth Opportunities",
-                  desc: "Advance your career in a fast-growing company with mentorship from industry veterans."
+                  icon: <Zap className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "Accelerated Learning",
+                  desc: "Master AI-powered development workflows that make you 3x more productive and efficient."
                 },
                 {
-                  icon: <Users className="h-6 w-6 sm:h-7 sm:w-7" />,
-                  title: "World-Class Team",
-                  desc: "Collaborate with experts from Meta, Amazon, and other leading tech companies."
+                  icon: <Target className="h-6 w-6 sm:h-7 sm:w-7" />,
+                  title: "Impact-Driven Projects",
+                  desc: "Build intelligent solutions that solve real business problems across diverse industries."
                 },
                 {
                   icon: <Globe className="h-6 w-6 sm:h-7 sm:w-7" />,
-                  title: "Remote-First Flexibility",
-                  desc: "Work from anywhere with flexible hours and a strong work-life balance."
+                  title: "Global AI Community",
+                  desc: "Remote-first culture with flexible hours and access to the latest AI development tools."
                 }
               ].map((benefit, index) => (
                 <Card key={index} className="bg-white border border-violet-200 hover:shadow-lg transition-all duration-300 text-center">
@@ -1667,7 +1704,7 @@ export default function TechiniumLanding() {
                 <p className="text-slate-600 mb-4">We're always looking for exceptional talent. Send us your resume!</p>
                 <Magnetic>
                   <Button variant="outline" className="border-violet-200 text-violet-700 hover:bg-violet-50">
-                    <a href="mailto:careers@techinium.ai?subject=Open Application" className="inline-flex items-center">
+                    <a href="mailto:careers@techinium.com?subject=Open Application" className="inline-flex items-center">
                       Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -1717,11 +1754,12 @@ export default function TechiniumLanding() {
             </div>
 
             <div>
-              <div className="font-semibold mb-3 sm:mb-4 text-white text-sm sm:text-base">Solutions</div>
+              <div className="font-semibold mb-3 sm:mb-4 text-white text-sm sm:text-base">Services</div>
               <ul className="text-sm text-slate-400 space-y-2 sm:space-y-3">
-                <li><a href="#solutions" className="hover:text-white transition">Autonomous Agents</a></li>
-                <li><a href="#solutions" className="hover:text-white transition">NLP Tools</a></li>
-                <li><a href="#solutions" className="hover:text-white transition">MLOps Platforms</a></li>
+                <li><a href="#solutions" className="hover:text-white transition">Web Development</a></li>
+                <li><a href="#solutions" className="hover:text-white transition">Mobile App Development</a></li>
+                <li><a href="#solutions" className="hover:text-white transition">Full Stack Development</a></li>
+                <li><a href="#solutions" className="hover:text-white transition">AI Chatbots & Agents</a></li>
                 <li><a href="#solutions" className="hover:text-white transition">AI Consulting</a></li>
               </ul>
             </div>
@@ -1730,8 +1768,8 @@ export default function TechiniumLanding() {
               <div className="font-semibold mb-3 sm:mb-4 text-white text-sm sm:text-base">Company</div>
               <ul className="text-sm text-slate-400 space-y-2 sm:space-y-3">
                 <li><a href="#about" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#careers" className="hover:text-white transition">Careers</a></li>
                 <li><a href="#industries" className="hover:text-white transition">Industries</a></li>
+                <li><a href="#careers" className="hover:text-white transition">Careers</a></li>
                 <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
               </ul>
             </div>
